@@ -1,0 +1,4 @@
+docker build -t ns-vqa *путь к Dockerfile*
+docker run --ipc=host --gpus all -m 30G -v *путь к папке ns-vqa на хосте*:*путь к папке ns-vqa в контейнере* -it ns-vqa 
+source activate ns-vqa (команда рабоnает только в самом корне (то есть в /))
+
