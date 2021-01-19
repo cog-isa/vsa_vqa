@@ -1,4 +1,6 @@
 docker build -t ns-vqa *путь к Dockerfile*
 docker run --ipc=host --gpus all -m 30G -v *путь к папке ns-vqa на хосте*:*путь к папке ns-vqa в контейнере* -it ns-vqa 
-source activate ns-vqa (команда рабоnает только в самом корне (то есть в /))
 
+В докере: 
+source activate ns-vqa (команда рабоnает только в самом корне (то есть в /))
+conda install pytorch=0.4.1 cudatoolkit=9.0 -c pytorch
