@@ -32,6 +32,7 @@ class Trainer():
 
         self.stats = {
             'train_losses': [],
+            'train_advantages': [],
             'train_batch_accs': [],
             'train_accs_ts': [],
             'val_losses': [],
@@ -41,7 +42,7 @@ class Trainer():
             'model_t': 0
         }
         if opt.visualize_training:
-            from reason.utils.logger import Logger
+            from utils.logger import Logger
             self.logger = Logger('%s/logs' % opt.run_dir)
 
     def train(self):
@@ -72,7 +73,9 @@ class Trainer():
                 if t % self.display_every == 0:
                     if self.reinforce:
                         self.stats['train_batch_accs'].append(reward)
+                        self.stats['train_advantages'].append(advantage)
                         self.log_stats('training batch reward', reward, t)
+                        self.log_stats('training batch advantage', advantage, t)
                         print('| iteration %d / %d, epoch %d, reward %f' % (t, self.num_iters, epoch, reward))
                     else:
                         self.stats['train_losses'].append(loss)
@@ -99,7 +102,7 @@ class Trainer():
                     self.log_stats('val accuracy', val_acc, t)
                     self.stats['val_accs_ts'].append(t)
                     self.model.save_checkpoint('%s/checkpoint.pt' % self.run_dir)
-                    with open('%s/stats.json' % self.run_dir, 'w') as fout:
+                    with open('%s/stats_tfevents.json' % self.run_dir, 'w') as fout:
                         json.dump(self.stats, fout)
                     self.log_params(t)
 

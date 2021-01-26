@@ -46,6 +46,17 @@ class Decoder(BaseRNN):
         if use_attention:
             self.attention = Attention(self.hidden_size)
 
+        self.mask = torch.zeros((self.func_size, self.arg_size)).cuda()
+
+        for idxs in self.vocab['program_idx_couple'].keys():
+            func_idx, arg_idx = idxs.split(' ')
+
+            func_idx = int(func_idx)
+            arg_idx = int(arg_idx)
+
+            self.mask[func_idx, arg_idx] = 1.0
+
+
     def forward_step(self, input_var, hidden, encoder_outputs):
         batch_size = input_var.size(0)
         output_size = input_var.size(1)
@@ -136,8 +147,18 @@ class Decoder(BaseRNN):
                 arg_symbols = arg_dist.sample().unsqueeze(1)
                 
             else:
-                func_symbols = func_output.topk(1)[1].view(batch_size, -1)
-                arg_symbols = arg_output.topk(1)[1].view(batch_size, -1)
+                # applies mask to inputs in order not to predict <unk>, reduces quality 
+                # prob_matrix = torch.bmm(torch.exp(func_output.view(batch_size, -1, 1)), torch.exp(arg_output.view(batch_size, 1, -1))) * self.mask
+                # equivalent to usual argmax sampling
+                prob_matrix = torch.bmm(torch.exp(func_output.view(batch_size, -1, 1)), torch.exp(arg_output.view(batch_size, 1, -1))) 
+
+                argmax_vals = (torch.max(prob_matrix.view(batch_size, -1), dim=1)[1]).unsqueeze(1)
+                func_symbols = argmax_vals / self.arg_size 
+                arg_symbols = argmax_vals % self.arg_size
+
+                #func_symbols = func_output.topk(1)[1].view(batch_size, -1)
+                #arg_symbols = arg_output.topk(1)[1].view(batch_size, -1)
+
 
             symbols = torch.zeros_like(func_symbols)
 
