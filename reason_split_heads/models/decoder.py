@@ -46,16 +46,15 @@ class Decoder(BaseRNN):
         if use_attention:
             self.attention = Attention(self.hidden_size)
 
-        self.mask = torch.zeros((self.func_size, self.arg_size)).cuda()
+        # self.mask = torch.zeros((self.func_size, self.arg_size)).cuda()
 
-        for idxs in self.vocab['program_idx_couple'].keys():
-            func_idx, arg_idx = idxs.split(' ')
+        # for idxs in self.vocab['program_idx_couple'].keys():
+        #     func_idx, arg_idx = idxs.split(' ')
 
-            func_idx = int(func_idx)
-            arg_idx = int(arg_idx)
+        #     func_idx = int(func_idx)
+        #     arg_idx = int(arg_idx)
 
-            self.mask[func_idx, arg_idx] = 1.0
-
+        #     self.mask[func_idx, arg_idx] = 1.0
 
     def forward_step(self, input_var, hidden, encoder_outputs):
         batch_size = input_var.size(0)
@@ -100,29 +99,43 @@ class Decoder(BaseRNN):
         output_lengths = np.array([self.max_length] * batch_size)
 
         def decode(i, func_output, arg_output, reinforce_sample=reinforce_sample):
-            output_logprob = torch.zeros(batch_size, len(self.vocab['program_idx_couple'].keys())).cuda()
+            output_prob = torch.zeros(batch_size, len(self.vocab['program_idx_couple'].keys())).cuda()
+
+            prob_matrix = torch.bmm(torch.exp(func_output.view(batch_size, -1, 1)), torch.exp(arg_output.view(batch_size, 1, -1)))
             
-            unk_prob = torch.ones(batch_size).cuda()
+            for idxs, value in self.vocab['program_idx_couple'].items():
+                func_idx, arg_idx = idxs.split(' ')
 
-            for idxs in self.vocab['program_idx_couple'].keys():
-                if idxs != '22 4':
-                    value = self.vocab['program_idx_couple'][idxs]
+                func_idx = int(func_idx)
+                arg_idx = int(arg_idx)
 
-                    func_idx, arg_idx = idxs.split(' ')
-                    func_idx = int(func_idx)
-                    arg_idx = int(arg_idx)
+                output_prob[:, value] = prob_matrix[:, func_idx, arg_idx]
 
-                    logprob = func_output[:, :, func_idx] + arg_output[:, :, arg_idx]
-                    logprob = logprob.squeeze()
-                    output_logprob[:, value] = logprob
+            output_prob = output_prob / output_prob.sum(dim=1).view(batch_size, 1)
 
-                    unk_prob -= torch.exp(logprob)
-
-            unk_prob[unk_prob < 1e-7] = 1e-7
-
-            output_logprob[:, 3] = torch.log(unk_prob)
+            output_logprob = torch.log(output_prob)
             
             output_logprobs.append(output_logprob)
+
+            # unk_prob = torch.ones(batch_size).cuda()
+
+            # for idxs in self.vocab['program_idx_couple'].keys():
+            #     if idxs != '22 4':
+            #         value = self.vocab['program_idx_couple'][idxs]
+
+            #         func_idx, arg_idx = idxs.split(' ')
+            #         func_idx = int(func_idx)
+            #         arg_idx = int(arg_idx)
+
+            #         logprob = func_output[:, :, func_idx] + arg_output[:, :, arg_idx]
+            #         logprob = logprob.squeeze()
+            #         output_logprob[:, value] = logprob
+
+            #         unk_prob -= torch.exp(logprob)
+
+            # unk_prob[unk_prob < 1e-7] = 1e-7
+
+            
 
             # xsum = 0.0
             # unk_xsum = 0.0
@@ -140,30 +153,42 @@ class Decoder(BaseRNN):
             # exit(0)
 
             if reinforce_sample:
-                func_dist = torch.distributions.Categorical(probs=torch.exp(func_output.view(batch_size, -1)))
-                arg_dist = torch.distributions.Categorical(probs=torch.exp(arg_output.view(batch_size, -1))) 
+                dist = torch.distributions.Categorical(probs=output_prob)
+                symbols = dist.sample().unsqueeze(1)
+                # prob_matrix = torch.bmm(torch.exp(func_output.view(batch_size, -1, 1)), torch.exp(arg_output.view(batch_size, 1, -1))) * self.mask
                 
-                func_symbols = func_dist.sample().unsqueeze(1)
-                arg_symbols = arg_dist.sample().unsqueeze(1)
+                # joint_dist = torch.distributions.Categorical(probs=prob_matrix.view(batch_size, -1))
+                # joint_sample = joint_dist.sample().unsqueeze(1)
+
+                # func_symbols = joint_sample / self.arg_size 
+                # arg_symbols = joint_sample % self.arg_size
+
+                #func_dist = torch.distributions.Categorical(probs=torch.exp(func_output.view(batch_size, -1)))
+                #arg_dist = torch.distributions.Categorical(probs=torch.exp(arg_output.view(batch_size, -1))) 
+                
+                #func_symbols = func_dist.sample().unsqueeze(1)
+                #arg_symbols = arg_dist.sample().unsqueeze(1)
                 
             else:
+                symbols = output_prob.topk(1)[1].view(batch_size, -1)
+
                 # applies mask to inputs in order not to predict <unk>, reduces quality 
                 # prob_matrix = torch.bmm(torch.exp(func_output.view(batch_size, -1, 1)), torch.exp(arg_output.view(batch_size, 1, -1))) * self.mask
                 # equivalent to usual argmax sampling
-                prob_matrix = torch.bmm(torch.exp(func_output.view(batch_size, -1, 1)), torch.exp(arg_output.view(batch_size, 1, -1))) 
+                # prob_matrix = torch.bmm(torch.exp(func_output.view(batch_size, -1, 1)), torch.exp(arg_output.view(batch_size, 1, -1))) 
 
-                argmax_vals = (torch.max(prob_matrix.view(batch_size, -1), dim=1)[1]).unsqueeze(1)
-                func_symbols = argmax_vals / self.arg_size 
-                arg_symbols = argmax_vals % self.arg_size
+                # argmax_vals = (torch.max(prob_matrix.view(batch_size, -1), dim=1)[1]).unsqueeze(1)
+                # func_symbols = argmax_vals / self.arg_size 
+                # arg_symbols = argmax_vals % self.arg_size
 
                 #func_symbols = func_output.topk(1)[1].view(batch_size, -1)
                 #arg_symbols = arg_output.topk(1)[1].view(batch_size, -1)
 
 
-            symbols = torch.zeros_like(func_symbols)
+            # symbols = torch.zeros_like(func_symbols)
 
-            for i in range(batch_size):
-                symbols[i, :] = self.vocab['program_idx_couple'].get('{} {}'.format(func_symbols[i, :].item(), arg_symbols[i, :].item()), 3)
+            # for i in range(batch_size):
+            #     symbols[i, :] = self.vocab['program_idx_couple'].get('{} {}'.format(func_symbols[i, :].item(), arg_symbols[i, :].item()), 3)
 
             output_symbols.append(symbols.squeeze())
 

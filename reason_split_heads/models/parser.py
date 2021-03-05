@@ -92,6 +92,10 @@ class Seq2seqParser():
         assert self.reward is not None, 'Must run forward sampling and set reward before REINFORCE'
         self.seq2seq.reinforce_backward(self.reward, entropy_factor)
 
+    def ppo_backward(self, entropy_factor=0.0):
+        assert self.reward is not None, 'Must run forward sampling and set reward before PPO'
+        self.seq2seq.ppo_backward(self.reward, entropy_factor)
+
     def parse(self):
         output_sequence = self.seq2seq.sample_output(self.x, self.input_lengths)
         output_sequence = self._restore_order(output_sequence.data.cpu())

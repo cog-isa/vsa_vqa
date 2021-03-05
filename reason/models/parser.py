@@ -22,6 +22,8 @@ class Seq2seqParser():
         self.end_id = self.net_params['end_id']
         self.gpu_ids = opt.gpu_ids
         self.criterion = nn.NLLLoss()
+        self.critic_criterion = nn.MSELoss()
+
         if len(opt.gpu_ids) > 0 and torch.cuda.is_available():
             self.seq2seq.cuda(opt.gpu_ids[0])
 
@@ -58,6 +60,12 @@ class Seq2seqParser():
     def set_reward(self, reward):
         self.reward = reward
 
+    def set_reward_ppo(self, reward):
+        self.reward = reward
+        self.seq2seq.memory.rewards.append(reward)
+        self.seq2seq.memory.values.append(self.state_value.detach())
+        self.seq2seq.memory.advantages.append(reward - torch.mean(self.state_value).item())
+
     def supervised_forward(self):
         assert self.y is not None, 'Must set y value'
         output_logprob = self.seq2seq(self.x, self.y, self.input_lengths)
@@ -74,9 +82,19 @@ class Seq2seqParser():
         self.reward = None # Need to recompute reward from environment each time a new sequence is sampled
         return self.rl_seq
 
+    def ppo_forward(self):
+        self.rl_seq, self.state_value = self.seq2seq.ppo_forward(self.x, self.input_lengths)
+        self.rl_seq = self._restore_order(self.rl_seq.data.cpu())
+        self.reward = None # Need to recompute reward from environment each time a new sequence is sampled
+        return self.rl_seq
+
     def reinforce_backward(self, entropy_factor=0.0):
         assert self.reward is not None, 'Must run forward sampling and set reward before REINFORCE'
         self.seq2seq.reinforce_backward(self.reward, entropy_factor)
+
+    def ppo_backward(self, optimizer, entropy_factor=0.0):
+        assert self.reward is not None, 'Must run forward sampling and set reward before PPO'
+        self.seq2seq.ppo_backward(optimizer, self.reward, self.state_value, entropy_factor)
 
     def parse(self):
         output_sequence = self.seq2seq.sample_output(self.x, self.input_lengths)

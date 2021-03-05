@@ -24,6 +24,6 @@ def get_dataloader(opt, split):
     """Get function for dataloader class"""
     dataset = get_dataset(opt, split)
     shuffle = opt.shuffle if split == 'train' else 0
-    loader = DataLoader(dataset=dataset, batch_size=opt.batch_size, shuffle=shuffle, num_workers=opt.num_workers)
+    loader = DataLoader(dataset=dataset, batch_size=opt.batch_size, shuffle=shuffle, num_workers=opt.num_workers, drop_last=True)
     print('| %s %s loader has %d samples' % (opt.dataset, split, len(loader.dataset)))
     return loader

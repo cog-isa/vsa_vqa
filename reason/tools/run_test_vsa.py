@@ -47,7 +47,7 @@ def check_program(pred, gt):
             break
     return True
 
-HD_DIM = 30000
+HD_DIM = 20000
 VSA_TYPE = 'polar'
 THR = 6
 

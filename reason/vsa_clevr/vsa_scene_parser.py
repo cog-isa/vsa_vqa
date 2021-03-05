@@ -44,7 +44,7 @@ class VSASceneParser:
                 'size': obj['size'],
                 'shape': obj['shape'],
                 'material': obj['material'],
-                'position': obj['position']
+                'position': obj['3d_coords']
             }
 
             count_obj += 1
@@ -76,7 +76,7 @@ class VSASceneParser:
         z_coords = []
 
         for obj in current_scene['objects']:
-            d3_coords = obj['position']
+            d3_coords = obj['3d_coords']
             x_coords.append(d3_coords[0])
             y_coords.append(d3_coords[1])
             z_coords.append(d3_coords[2])
@@ -154,17 +154,17 @@ class VSASceneParser:
             # Add coordinates
             obj_discr = current_scene['objects'][obj_num]
 
-            obj_x_coord = str(obj_discr['position'][0])
+            obj_x_coord = str(obj_discr['3d_coords'][0])
             obj_x_coord_vec = scene_im['x_coord'].get_vector(obj_x_coord)
             # Replenish the set of x object coordinates
             obj_x_coords_raw.append(bind(obj_x_coord_vec, scene_im['object'].get_vector(obj_name)))
 
-            obj_y_coord = str(obj_discr['position'][1])
+            obj_y_coord = str(obj_discr['3d_coords'][1])
             obj_y_coord_vec = scene_im['y_coord'].get_vector(obj_y_coord)
             # Replenish the set of y object coordinates
             obj_y_coords_raw.append(bind(obj_y_coord_vec, scene_im['object'].get_vector(obj_name)))
 
-            obj_z_coord = str(obj_discr['position'][2])
+            obj_z_coord = str(obj_discr['3d_coords'][2])
             obj_z_coord_vec = scene_im['z_coord'].get_vector(obj_z_coord)
             # Replenish the set of z object coordinates
             obj_z_coords_raw.append(bind(obj_z_coord_vec, scene_im['object'].get_vector(obj_name)))

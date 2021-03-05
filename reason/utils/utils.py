@@ -48,7 +48,7 @@ def load_scenes(scenes_json):
         for i, o in enumerate(s['objects']):
             item = {}
             item['id'] = '%d-%d' % (s['image_index'], i)
-            if '3d_coords' in o:
+            if 'position' not in o:
                 item['position'] = [np.dot(o['3d_coords'], s['directions']['right']),
                                     np.dot(o['3d_coords'], s['directions']['front']),
                                     o['3d_coords'][2]]

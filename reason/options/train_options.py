@@ -31,6 +31,8 @@ class TrainOptions(BaseOptions):
         self.parser.add_argument('--fix_embedding', default=0, type=int, help='fix pretrained embedding')
         # Training
         self.parser.add_argument('--reinforce', default=0, type=int, help='train reinforce')
+        self.parser.add_argument('--vsa', default=0, type=int, help='use VSA executor')
+        self.parser.add_argument('--ppo', default=0, type=int, help='train PPO')
         self.parser.add_argument('--batch_size', default=64, type=int, help='batch size')
         self.parser.add_argument('--learning_rate', default=7e-4, type=float, help='learning rate')
         self.parser.add_argument('--entropy_factor', default=0.0, type=float, help='entropy weight in reinforce loss')

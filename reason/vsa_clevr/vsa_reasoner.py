@@ -5,6 +5,11 @@ import utils.utils as utils
 import json 
 import random
 
+CLEVR_COLORS = ['blue', 'brown', 'cyan', 'gray', 'green', 'purple', 'red', 'yellow']
+CLEVR_MATERIALS = ['rubber', 'metal']
+CLEVR_SHAPES = ['cube', 'cylinder', 'sphere']
+CLEVR_SIZES = ['large', 'small']
+
 CLEVR_ANSWER_CANDIDATES = {
     'count': ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
     'equal_color': ['yes', 'no'],
@@ -42,6 +47,12 @@ class VSAReasoner:
 
         self.vocab = utils.load_vocab('../data/reason/clevr_h5/clevr_vocab.json')
 
+        self.answer_candidates = CLEVR_ANSWER_CANDIDATES
+        
+        self.colors = CLEVR_COLORS
+        self.materials = CLEVR_MATERIALS
+        self.shapes = CLEVR_SHAPES
+        self.sizes = CLEVR_SIZES
         self.answer_candidates = CLEVR_ANSWER_CANDIDATES
 
         self.modules = {}
@@ -98,7 +109,7 @@ class VSAReasoner:
             if self.vocab['program_idx_to_token'][x[l-1]] == '<END>':
                 length = l
         if length == 0:
-            return 'error'
+            return 'error', []
 
         scene = scene['scene_vec']
 
@@ -118,24 +129,19 @@ class VSAReasoner:
                 tokens.append('scene')
             elif token in self.modules:
                 module = self.modules[token]
+                # try:
                 if token.startswith('same') or token.startswith('relate'):
                     try:
                         ans = module(ans, scene)
                     except:
                         print(scene)
                         print(tokens)
-                    #prev = ans
 
                     tokens.append('{} {} {}'.format(token, ans, scene))
                 elif token.startswith('filter'):
-                    if type(prev) != int:
-                        ans = module(scene, '_', ans)
-                        
-                        tokens.append('{} {} {}'.format(token, scene, ans))
-                    else:
-                        ans = module(scene, '_')
+                    ans = module(scene, '_', ans)
 
-                        tokens.append('{} {}'.format(token, scene))
+                    tokens.append('{} {} {}'.format(token, scene, ans))
                 elif token.startswith('query'):
                     ans = module(scene, ans, '_')
                     
@@ -148,7 +154,11 @@ class VSAReasoner:
                     tokens.append('{}'.format(token))
                     
                     break
-
+                # except Exception as e:
+                #             print(e)
+                #             print(token)
+                #             print(scene)
+                #             print(tokens)
             self.exe_trace.append(ans)
 
         ans = str(ans)
@@ -161,28 +171,52 @@ class VSAReasoner:
         return ans, tokens
 
     def count(self, scene, _):
-        result = len(scene)
-        return result
+        if type(scene) == list:
+            result = len(scene)
+            return result
+        else:
+            return 'error'
+
 
     def equal_color(self, color1, color2):
-        result = 'yes' if color1 == color2 else 'no'
-        return result
+        if type(color1) == str and color1 in self.colors and type(color2) == str and color2 in self.colors:
+            if color1 == color2:
+                return 'yes'
+            else:
+                return 'no'
+        return 'error'
 
     def equal_integer(self, integer1, integer2):
-        result = 'yes' if integer1 == integer2 else 'no'
-        return result
+        if type(integer1) == int and type(integer2) == int:
+            if integer1 == integer2:
+                return 'yes'
+            else:
+                return 'no'
+        return 'error'
 
     def equal_material(self, material1, material2):
-        result = 'yes' if material1 == material2 else 'no'
-        return result
+        if type(material1) == str and material1 in self.materials and type(material2) == str and material2 in self.materials:
+            if material1 == material2:
+                return 'yes'
+            else:
+                return 'no'
+        return 'error'
 
     def equal_shape(self, shape1, shape2):
-        result = 'yes' if shape1 == shape2 else 'no'
-        return result
-
+        if type(shape1) == str and shape1 in self.shapes and type(shape2) == str and shape2 in self.shapes:
+            if shape1 == shape2:
+                return 'yes'
+            else:
+                return 'no'
+        return 'error'
+    
     def equal_size(self, size1, size2):
-        result = 'yes' if size1 == size2 else 'no'
-        return result
+        if type(size1) == str and size1 in self.sizes and type(size2) == str and size2 in self.sizes:
+            if size1 == size2:
+                return 'yes'
+            else:
+                return 'no'
+        return 'error'
 
     def exist(self, scene, _):
         if scene is None or scene == []:
@@ -192,103 +226,155 @@ class VSAReasoner:
         return result
 
     def filter_blue(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.color, 'blue')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.color, 'blue')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_brown(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.color, 'brown')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.color, 'brown')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_cyan(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.color, 'cyan')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.color, 'cyan')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_gray(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.color, 'gray')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.color, 'gray')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_green(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.color, 'green')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.color, 'green')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_purple(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.color, 'purple')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.color, 'purple')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_red(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.color, 'red')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.color, 'red')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_yellow(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.color, 'yellow')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.color, 'yellow')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_rubber(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.material, 'rubber')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.material, 'rubber')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_metal(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.material, 'metal')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.material, 'metal')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_cube(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.shape, 'cube')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.shape, 'cube')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_cylinder(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.shape, 'cylinder')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.shape, 'cylinder')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_sphere(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.shape, 'sphere')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.shape, 'sphere')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_large(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.size, 'large')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.size, 'large')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def filter_small(self, scene, _, prev=None):
-        result = self.get_objects(scene, self.size, 'small')
-        if prev is not None:
-            result = self.intersect(result, prev)
-        return result
+        if type(scene) == np.ndarray:
+            result = self.get_objects(scene, self.size, 'small')
+            if prev is not None:
+                result = self.intersect(result, prev)
+            return result
+        else:
+            return 'error'
 
     def greater_than(self, integer1, integer2):
-        result = 'yes' if integer1 > integer2 else 'no'
-        return result
+        if type(integer1) == int and type(integer2) == int:
+            if integer1 > integer2:
+                return 'yes'
+            else:
+                return 'no'
+        return 'error'
 
     def less_than(self, integer1, integer2):
-        result = 'yes' if integer1 < integer2 else 'no'
-        return result
+        if type(integer1) == int and type(integer2) == int:
+            if integer1 < integer2:
+                return 'yes'
+            else:
+                return 'no'
+        return 'error'
 
     def intersect(self, scene1, scene2):
         try:
@@ -298,114 +384,37 @@ class VSAReasoner:
             return scene1
 
     def query_color(self, scene, obj, _):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         result = self.get_attr_value(scene, self.color, obj)
         return result
 
     def query_material(self, scene, obj, _):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         result = self.get_attr_value(scene, self.material, obj)
         return result
 
     def query_shape(self, scene, obj, _):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         result = self.get_attr_value(scene, self.shape, obj)
         return result
 
     def query_size(self, scene, obj, _):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         result = self.get_attr_value(scene, self.size, obj)
         return result
 
-    # def relate_behind(self, obj, scene):
-    #     y_coord_hd = self.coordinates.get_vector('y_coord')
-    #     obj_hd = self.objects.get_vector(obj)
-
-    #     temp = bind(y_coord_hd, obj_hd)
-    #     y_obj_noisy = bind(scene, temp)
-    #     y_obj_idx = np.argmin(self.y_coordinates.search(y_obj_noisy))
-    #     y_obj = self.y_coordinates.get_name(y_obj_idx)
-    #     y_obj_hd = self.y_coordinates.get_vector(y_obj)
-
-    #     objects = []
-
-    #     for i in range(10):
-    #         y_obj_hd_shifted = cyclicsh(y_obj_hd, i)
-    #         temp = bind(y_coord_hd, y_obj_hd_shifted)
-    #         objects_noisy = bind(scene, temp)
-    #         cleaned_up = self.clean_up_bundle(objects_noisy)
-
-    #         if cleaned_up is not None:
-    #             objects.append(self.clean_up_bundle(objects_noisy))
-
-    #     return objects
-
-    # def relate_front(self, obj, scene):
-    #     y_coord_hd = self.coordinates.get_vector('y_coord')
-    #     obj_hd = self.objects.get_vector(obj)
-
-    #     temp = bind(y_coord_hd, obj_hd)
-    #     y_obj_noisy = bind(scene, temp)
-    #     y_obj_idx = np.argmin(self.y_coordinates.search(y_obj_noisy))
-    #     y_obj = self.y_coordinates.get_name(y_obj_idx)
-    #     y_obj_hd = self.y_coordinates.get_vector(y_obj)
-
-    #     objects = []
-
-    #     for i in range(10):
-    #         y_obj_hd_shifted = cyclicsh(y_obj_hd, i, inverse=True)
-    #         temp = bind(y_coord_hd, y_obj_hd_shifted)
-    #         objects_noisy = bind(scene, temp)
-    #         cleaned_up = self.clean_up_bundle(objects_noisy)
-
-    #         if cleaned_up is not None:
-    #             objects.append(self.clean_up_bundle(objects_noisy))
-
-    #     return objects
-
-    # def relate_left(self, obj, scene):
-    #     x_coord_hd = self.coordinates.get_vector('x_coord')
-    #     obj_hd = self.objects.get_vector(obj)
-
-    #     temp = bind(x_coord_hd, obj_hd)
-    #     x_obj_noisy = bind(scene, temp)
-    #     x_obj_idx = np.argmin(self.x_coordinates.search(x_obj_noisy))
-    #     x_obj = self.x_coordinates.get_name(x_obj_idx)
-    #     x_obj_hd = self.x_coordinates.get_vector(x_obj)
-
-    #     objects = []
-
-    #     for i in range(10):
-    #         x_obj_hd_shifted = cyclicsh(x_obj_hd, i, inverse=True)
-    #         temp = bind(x_coord_hd, x_obj_hd_shifted)
-    #         objects_noisy = bind(scene, temp)
-    #         cleaned_up = self.clean_up_bundle(objects_noisy)
-
-    #         if cleaned_up is not None:
-    #             objects.append(self.clean_up_bundle(objects_noisy))
-
-    #     return objects
-
-    # def relate_right(self, obj, scene):
-    #     x_coord_hd = self.coordinates.get_vector('x_coord')
-    #     obj_hd = self.objects.get_vector(obj)
-
-    #     temp = bind(x_coord_hd, obj_hd)
-    #     x_obj_noisy = bind(scene, temp)
-    #     x_obj_idx = np.argmin(self.x_coordinates.search(x_obj_noisy))
-    #     x_obj = self.x_coordinates.get_name(x_obj_idx)
-    #     x_obj_hd = self.x_coordinates.get_vector(x_obj)
-
-    #     objects = []
-
-    #     for i in range(10):
-    #         x_obj_hd_shifted = cyclicsh(x_obj_hd, i)
-    #         temp = bind(x_coord_hd, x_obj_hd_shifted)
-    #         objects_noisy = bind(scene, temp)
-    #         cleaned_up = self.clean_up_bundle(objects_noisy)
-
-    #         if cleaned_up is not None:
-    #             objects.append(self.clean_up_bundle(objects_noisy))
-
-    #     return objects
-
     def relate_behind(self, obj, scene):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+
         y_coord_hd = self.coordinates.get_vector('y_coord')
         obj_hd = self.objects.get_vector(obj)
         temp = bind(y_coord_hd, obj_hd)
@@ -438,6 +447,9 @@ class VSAReasoner:
         return result
 
     def relate_front(self, obj, scene):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+
         y_coord_hd = self.coordinates.get_vector('y_coord')
         obj_hd = self.objects.get_vector(obj)
         temp = bind(y_coord_hd, obj_hd)
@@ -470,6 +482,9 @@ class VSAReasoner:
         return result
 
     def relate_left(self, obj, scene):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         x_coord_hd = self.coordinates.get_vector('x_coord')
         obj_hd = self.objects.get_vector(obj)
         temp = bind(x_coord_hd, obj_hd)
@@ -502,8 +517,10 @@ class VSAReasoner:
         return result
 
     def relate_right(self, obj, scene):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         x_coord_hd = self.coordinates.get_vector('x_coord')
-        #print(obj)
         obj_hd = self.objects.get_vector(obj)
         temp = bind(x_coord_hd, obj_hd)
 
@@ -535,6 +552,9 @@ class VSAReasoner:
         return result
 
     def same_color(self, obj, scene):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         color = self.query_color(scene, obj, '_')
         result = self.get_objects(scene, self.color, color)
 
@@ -549,6 +569,9 @@ class VSAReasoner:
         return result
 
     def same_material(self, obj, scene):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         material = self.query_material(scene, obj, '_')
         result = self.get_objects(scene, self.material, material)
 
@@ -563,6 +586,9 @@ class VSAReasoner:
         return result
 
     def same_shape(self, obj, scene):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         shape = self.query_shape(scene, obj, '_')
         result = self.get_objects(scene, self.shape, shape)
 
@@ -577,6 +603,9 @@ class VSAReasoner:
         return result
 
     def same_size(self, obj, scene):
+        if type(scene) != np.ndarray or type(obj) != str or not obj.startswith('obj'):
+           return 'error'
+         
         size = self.query_size(scene, obj, '_')
         result = self.get_objects(scene, self.size, size)
 
@@ -598,10 +627,14 @@ class VSAReasoner:
             return scene1
 
     def unique(self, scene, _):
-        if len(scene) == 0:
-            return 'error'
-
-        return scene[0]
+        if type(scene) == list and len(scene) > 0:
+            ans = scene[0]
+            if isinstance(ans, str):
+                return ans
+            else:
+                return 'error'
+        else:
+           return 'error'
 
     def get_objects(self, scene, attr, value, thr=0.05):
         attr_hd = self.attrs.get_vector(attr.get_im_name())

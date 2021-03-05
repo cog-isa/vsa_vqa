@@ -1,14 +1,32 @@
 import json
 import torch
 import utils.utils as utils
+from vsa_clevr.vsa_reasoner import VSAReasoner
+from vsa_clevr.vsa_scene_parser import VSASceneParser 
 
+DESCR = {
+    'attribute': ['attribute', 'color', 'size', 'shape', 'material', 'coordinates'],
+    'color': ['purple', 'blue', 'brown', 'cyan', 'yellow', 'red', 'gray', 'green'],
+    'size': ['small', 'large'],
+    'shape': ['sphere', 'cylinder', 'cube'],
+    'material': ['metal', 'rubber'],
+    'coordinates': ['x_coord', 'y_coord', 'z_coord']
+}
+
+HD_DIM = 10000
+VSA_TYPE = 'polar'
+THR = 6
 
 class Trainer():
     """Trainer"""
 
     def __init__(self, opt, train_loader, val_loader, model, executor):
         self.opt = opt
+        self.vsa = opt.vsa
+        self.vsa_parser_train = VSASceneParser('../data/raw/CLEVR_v1.0/scenes/CLEVR_train_scenes.json', dim=HD_DIM, vsa_type=VSA_TYPE, thr=THR, descr=DESCR)
+        self.vsa_parser_val = VSASceneParser('../data/raw/CLEVR_v1.0/scenes/CLEVR_val_scenes.json', dim=HD_DIM, vsa_type=VSA_TYPE, thr=THR, descr=DESCR)
         self.reinforce = opt.reinforce
+        self.ppo = opt.ppo
         self.reward_decay = opt.reward_decay
         self.entropy_factor = opt.entropy_factor
         self.num_iters = opt.num_iters
@@ -47,6 +65,8 @@ class Trainer():
 
     def train(self):
         training_mode = 'reinforce' if self.reinforce else 'seq2seq'
+        if self.ppo:
+            training_mode = 'PPO'
         print('| start training %s, running in directory %s' % (training_mode, self.run_dir))
         t = 0
         epoch = 0
@@ -57,21 +77,31 @@ class Trainer():
                 t += 1
                 loss, reward = None, None
                 self.model.set_input(x, y)
-                self.optimizer.zero_grad()
+                if not self.ppo:
+                    self.optimizer.zero_grad()
                 if self.reinforce:
                     pred = self.model.reinforce_forward()
-                    reward = self.get_batch_reward(pred, ans, idx, 'train')
+                    reward = self.get_batch_reward(pred, ans, idx, 'train', self.vsa)
                     baseline = reward * (1 - self.reward_decay) + baseline * self.reward_decay
                     advantage = reward - baseline
                     self.model.set_reward(advantage)
                     self.model.reinforce_backward(self.entropy_factor)
+                elif self.ppo:
+                    pred = self.model.ppo_forward()
+                    reward = self.get_batch_reward(pred, ans, idx, 'train', self.vsa)
+                    baseline = reward * (1 - self.reward_decay) + baseline * self.reward_decay
+                    advantage = reward - baseline
+                    self.model.set_reward_ppo(reward)
+                    if t % 100 == 0:
+                        self.model.ppo_backward(self.optimizer, self.entropy_factor)
                 else:
                     loss = self.model.supervised_forward()
                     self.model.supervised_backward()
-                self.optimizer.step()
+                if not self.ppo:
+                    self.optimizer.step()
 
                 if t % self.display_every == 0:
-                    if self.reinforce:
+                    if self.reinforce or self.ppo:
                         self.stats['train_batch_accs'].append(reward)
                         self.stats['train_advantages'].append(advantage)
                         self.log_stats('training batch reward', reward, t)
@@ -93,7 +123,7 @@ class Trainer():
                         self.stats['model_t'] = t
                         self.model.save_checkpoint('%s/checkpoint_best.pt' % self.run_dir)
                         self.model.save_checkpoint('%s/checkpoint_iter%08d.pt' % (self.run_dir, t))
-                    if not self.reinforce:
+                    if not self.reinforce and not self.ppo:
                         val_loss = self.check_val_loss()
                         print('| validation loss %f' % val_loss)
                         self.stats['val_losses'].append(val_loss)
@@ -124,21 +154,38 @@ class Trainer():
         for x, y, ans, idx in self.val_loader:
             self.model.set_input(x, y)
             pred = self.model.parse()
-            reward += self.get_batch_reward(pred, ans, idx, 'val')
+            reward += self.get_batch_reward(pred, ans, idx, 'val', self.vsa)
             t += 1
         reward = reward / t if t is not 0 else 0
         return reward 
 
-    def get_batch_reward(self, programs, answers, image_idxs, split):
+    def get_batch_reward(self, programs, answers, image_idxs, split, vsa=False):
         pg_np = programs.numpy()
         ans_np = answers.numpy()
         idx_np = image_idxs.numpy()
         reward = 0
-        for i in range(pg_np.shape[0]):
-            pred, _ = self.executor.run(pg_np[i], idx_np[i], split)
-            ans = self.vocab['answer_idx_to_token'][ans_np[i]]
-            if pred == ans:
-                reward += 1.0
+
+        if vsa:
+            for i in range(pg_np.shape[0]):
+                if split == 'train':
+                    scene = self.vsa_parser_train.parse(idx_np[i])
+                else:
+                    scene = self.vsa_parser_val.parse(idx_np[i])
+
+                executor = VSAReasoner(scene)
+
+                pred, _ = executor.run(pg_np[i], scene)
+                ans = executor.vocab['answer_idx_to_token'][ans_np[i]]
+
+                if pred == ans:
+                    reward += 1.0
+        else:
+            for i in range(pg_np.shape[0]):
+                pred, _ = self.executor.run(pg_np[i], idx_np[i], split)
+                ans = self.vocab['answer_idx_to_token'][ans_np[i]]
+                if pred == ans:
+                    reward += 1.0
+
         reward /= pg_np.shape[0]
         return reward
 
