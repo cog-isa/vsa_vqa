@@ -249,7 +249,6 @@ class VSAReasoner:
         result = self.get_objects(scene, self.material, 'metal')
         if prev is not None:
             result = self.intersect(result, prev)
-        
         return result
 
     def filter_cube(self, scene, _, prev=None):

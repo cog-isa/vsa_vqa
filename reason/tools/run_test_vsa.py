@@ -47,13 +47,13 @@ def check_program(pred, gt):
             break
     return True
 
-HD_DIM = 20000
+HD_DIM = 15000
 VSA_TYPE = 'polar'
-THR = 6
+THR = 16    
 
 opt = TestOptions().parse()
 loader = get_dataloader(opt, 'val')
-parser = VSASceneParser('../data/attr_net/results/clevr_val_scenes_zerotrained.json', dim=HD_DIM, vsa_type=VSA_TYPE, thr=THR, descr=DESCR)
+parser = VSASceneParser(opt.clevr_val_scene_path, dim=HD_DIM, vsa_type=VSA_TYPE, thr=THR, descr=DESCR)
 model = Seq2seqParser(opt)
 
 print('| running test')
@@ -81,9 +81,10 @@ for x, y, ans, idx in loader:
 
     for i in range(pg_np.shape[0]):
         scene = parser.parse(idx_np[i])
+        #print(scene['scene_vec'].shape)
         executor = VSAReasoner(scene)
         
-        pred_ans, _ = executor.run(pg_np[i], scene, guess=True)
+        pred_ans, _ = executor.run(pg_np[i], scene, guess=False)
         gt_ans = executor.vocab['answer_idx_to_token'][ans_np[i]]
 
         q_type = find_clevr_question_type(executor.vocab['program_idx_to_token'][y_np[i][1]])

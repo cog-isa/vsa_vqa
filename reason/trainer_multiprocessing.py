@@ -1,7 +1,5 @@
 import json
 import torch
-import sys
-sys.path.append('/home/mshaban/ns-vqa/reason')
 from utils.PPO import PPO, RolloutStorage
 import utils.utils as utils
 from vsa_clevr.vsa_reasoner import VSAReasoner
@@ -24,7 +22,7 @@ DESCR = {
 
 HD_DIM = 15000
 VSA_TYPE = 'polar'
-THR = 16   
+THR = 16
 
 parser = None
 pg_np_global = None
@@ -47,8 +45,7 @@ class Trainer():
         self.opt = opt
         self.batch_size = opt.batch_size
         self.vsa = opt.vsa
-        self.vsa_pretrain = opt.vsa_pretrain
-        self.vsa_pretrain_steps = opt.vsa_pretrain_steps
+        self.pool = Pool(16)
         self.vsa_parser_train = VSASceneParser(opt.clevr_train_scene_path, dim=HD_DIM, vsa_type=VSA_TYPE, thr=THR, descr=DESCR)
         self.vsa_parser_val = VSASceneParser(opt.clevr_val_scene_path, dim=HD_DIM, vsa_type=VSA_TYPE, thr=THR, descr=DESCR)
         self.reinforce = opt.reinforce
@@ -121,11 +118,7 @@ class Trainer():
                     self.optimizer.zero_grad()
                 if self.reinforce:
                     pred = self.model.reinforce_forward()
-                    if self.vsa_pretrain:
-                        use_vsa = t > self.vsa_pretrain_steps
-                        reward = self.get_batch_reward(pred, ans, idx, 'train', use_vsa)
-                    else:
-                        reward = self.get_batch_reward(pred, ans, idx, 'train', self.vsa)
+                    reward = self.get_batch_reward(pred, ans, idx, 'train', self.vsa)
                     baseline = reward * (1 - self.reward_decay) + baseline * self.reward_decay
                     advantage = reward - baseline
                     self.model.set_reward(advantage)
@@ -153,7 +146,7 @@ class Trainer():
                 if not self.ppo:
                     self.optimizer.step()
 
-                if self.vsa and t % 1000 == 0:
+                if self.vsa and t % 100 == 0:
                     start = time.time()
                     gc.collect()
                     end = time.time()
@@ -223,27 +216,46 @@ class Trainer():
         ans_np = answers.numpy()
         idx_np = image_idxs.numpy()
 
-        reward = 0.0
+        reward = 0
 
         reward_list = []
         length_list = []
 
         if vsa:
             if split == 'train':
-                parser = self.vsa_parser_train
+                cur_parser = self.vsa_parser_train
             else:
-                parser = self.vsa_parser_val
+                cur_parser = self.vsa_parser_val
 
-            for i in range(pg_np.shape[0]):
-                scene = parser.parse(idx_np[i])
-                #print(scene['scene_vec'].shape)
-                executor = VSAReasoner(scene)
+            global parser
+            global pg_np_global
+            global ans_np_global
+            global idx_np_global
 
-                pred_ans, _ = executor.run(pg_np[i], scene, guess=False)
-                gt_ans = executor.vocab['answer_idx_to_token'][ans_np[i]]
+            parser = cur_parser 
+            pg_np_global = pg_np
+            ans_np_global = ans_np
+            idx_np_global = idx_np
 
-                if pred_ans == gt_ans:
-                    reward += 1.0
+            proc_q = Manager().Queue()
+            procs = []
+
+            scenes = []
+
+            for i in trange(pg_np.shape[0]):
+                proc = Process(target=parse, args=(i, proc_q))
+                procs.append(proc)
+                proc.start()
+
+            for proc in tqdm(procs):
+                proc.join()
+                reward += proc_q.get()
+
+            #for i, scene in enumerate(scenes):
+            #    executor = VSAReasoner(scene)
+            #    pred, _ = executor.run(pg_np[i], scene)
+            #    ans = executor.vocab['answer_idx_to_token'][ans_np[i]]
+            #    reward += (pred == ans)
         else:
             for i in range(pg_np.shape[0]):
                 if ppo:

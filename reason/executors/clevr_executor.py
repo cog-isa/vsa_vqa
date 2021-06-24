@@ -48,7 +48,7 @@ class ClevrExecutor:
         self.modules = {}
         self._register_modules()
     
-    def run(self, x, index, split, guess=False, debug=False):
+    def run(self, x, index, split, guess=False, debug=False, return_length=False):
         assert self.modules and self.scenes, 'Must have scene annotations and define modules first'
         assert split == 'train' or split == 'val'
 
@@ -61,6 +61,8 @@ class ClevrExecutor:
             if self.vocab['program_idx_to_token'][x[l-1]] == '<END>':
                 length = l
         if length == 0:
+            if return_length:
+                return 'error', [], 0
             return 'error', []
 
         scene = self.scenes[split][index]
@@ -106,6 +108,9 @@ class ClevrExecutor:
             final_module = self.vocab['program_idx_to_token'][x[0]]
             if final_module in self.answer_candidates:
                 ans = random.choice(self.answer_candidates[final_module])
+
+        if return_length:
+            return ans, tokens, length
         return ans, tokens
 
     def _print_debug_message(self, x):

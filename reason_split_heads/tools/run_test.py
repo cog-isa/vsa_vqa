@@ -67,7 +67,7 @@ for x, y, ans, idx in loader:
 
     
     for i in range(pg_np.shape[0]):
-        pred_ans, _ = executor.run(pg_np[i], idx_np[i], 'val', guess=False)
+        pred_ans, _ = executor.run(pg_np[i], idx_np[i], 'val', guess=True)
         gt_ans = executor.vocab['answer_idx_to_token'][ans_np[i]]
 
         q_type = find_clevr_question_type(executor.vocab['program_idx_to_token'][y_np[i][1]])

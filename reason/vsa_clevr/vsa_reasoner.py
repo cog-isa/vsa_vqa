@@ -559,7 +559,7 @@ class VSAReasoner:
         result = self.get_objects(scene, self.color, color)
 
         try:
-            result = result.remove(obj)
+            result.remove(obj)
         except:
             result = result
 
@@ -576,7 +576,7 @@ class VSAReasoner:
         result = self.get_objects(scene, self.material, material)
 
         try:
-            result = result.remove(obj)
+            result.remove(obj)
         except:
             result = result
 
@@ -593,7 +593,7 @@ class VSAReasoner:
         result = self.get_objects(scene, self.shape, shape)
 
         try:
-            result = result.remove(obj)
+            result.remove(obj)
         except:
             result = result
 
@@ -610,7 +610,7 @@ class VSAReasoner:
         result = self.get_objects(scene, self.size, size)
 
         try:
-            result = result.remove(obj)
+            result.remove(obj)
         except:
             result = result
 
@@ -636,6 +636,16 @@ class VSAReasoner:
         else:
            return 'error'
 
+    # def unique(self, scene, _):
+    #     if len(scene) == 0:
+    #         return 'error'
+
+    #     ans = scene[0]
+    #     if isinstance(ans, str):
+    #         return ans
+    #     else:
+    #         return 'object0'
+
     def get_objects(self, scene, attr, value, thr=0.05):
         attr_hd = self.attrs.get_vector(attr.get_im_name())
         value_hd = attr.get_vector(value)
@@ -656,4 +666,3 @@ class VSAReasoner:
         attr_value = attr.get_name(attr_value_idx)
 
         return attr_value
-
