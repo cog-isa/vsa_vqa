@@ -1,12 +1,12 @@
-ВАЖНО !!! 
-не забудь починить пути к файлам (где sys.path.append)
+# ВАЖНО !!! 
+не забудь починить пути к файлам (где sys.path.append) \
 управляй размером VSA векторов при помощи переменной HD_DIM (а лучше допиши в конфиг, чтобы задавать командой)
 
 для визуализации добавь --visualise 1 (пишет логи в тензорборд)
 
-Примеры скриптов для запусков (правь пути под себя):
+# Примеры скриптов для запусков (правь пути под себя):
 
-PREPROCESS
+## PREPROCESS
 ```
 python3 tools/preprocess_questions.py \
      --input_questions_json ../data/raw/visdial/raw/visdial_unannotated_questions_trainval.json \
@@ -29,7 +29,7 @@ python3 tools/preprocess_questions.py \
      --input_vocab_json ../data/raw/visdial/raw/visdial_vocab.json
 ```
 
-PRETRAIN
+## PRETRAIN
 ```
 python3 tools/run_train.py \
     --checkpoint_every 200 \
@@ -43,7 +43,7 @@ python3 tools/run_train.py \
     --clevr_val_scene_path ../data/raw/visdial/raw/coco_trainval_scenes.json
 ```
 
-FINETUNE
+## FINETUNE
 ```
 python3 tools/run_train.py \
     --visualise 1 \
@@ -61,7 +61,7 @@ python3 tools/run_train.py \
     --clevr_val_scene_path ../data/raw/visdial/raw/coco_trainval_scenes.json 
 ```
 
-TEST
+## TEST
 ```
 python3 tools/run_test.py \
     --run_dir ../data/reason/results \
@@ -75,7 +75,7 @@ python3 tools/run_test.py \
     --batch_size 2 
 ```
 
-VSA TEST 
+## VSA TEST 
 ```
 python3 tools/run_test_vsa.py \
     --run_dir ../data/reason/results \
