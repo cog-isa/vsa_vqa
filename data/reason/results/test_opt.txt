@@ -1,0 +1,17 @@
+| options
+run_dir: ../data/reason/results
+dataset: clevr
+shuffle: 1
+num_workers: 1
+manual_seed: None
+gpu_ids: [0]
+visualize: 0
+clevr_train_scene_path: ../data/raw/visdial/raw/coco_trainval_scenes.json
+clevr_val_scene_path: ../data/raw/visdial/raw/coco_trainval_scenes.json
+clevr_train_question_path: ../data/raw/visdial/h5/visdial_unannotated_questions_train.h5
+clevr_val_question_path: ../data/raw/visdial/h5/visdial_unannotated_questions_val.h5
+clevr_vocab_path: ../data/raw/visdial/raw/visdial_vocab.json
+load_checkpoint_path: ../data/reason/outputs/model_visdial_rl_bigger_pretrain_vsa/checkpoint_best.pt
+save_result_path: ../data/reason/results/result_vidial.json
+max_val_samples: None
+batch_size: 2

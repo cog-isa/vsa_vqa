@@ -1,0 +1,577 @@
+{
+    "questions": [
+        {
+            "image_index": 581,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["person"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 31,
+            "question_family_index": 0,
+            "image_filename": "COCO_train2014_000000000581.jpg",
+            "split": "val",
+            "question": "is there a person in the picture?",
+            "answer": "no"
+        },
+        {
+            "image_index": 584,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["broccoli"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 32,
+            "question_family_index": 0,
+            "image_filename": "COCO_train2014_000000000584.jpg",
+            "split": "val",
+            "question": "is there broccoli?",
+            "answer": "no"
+        },
+        {
+            "image_index": 589,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["dog"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 33,
+            "question_family_index": 0,
+            "image_filename": "COCO_val2014_000000000589.jpg",
+            "split": "val",
+            "question": "is there a dog with the man?",
+            "answer": "no"
+        },
+        {
+            "image_index": 590,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["sink"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 34,
+            "question_family_index": 0,
+            "image_filename": "COCO_val2014_000000000590.jpg",
+            "split": "val",
+            "question": "is there a sink?",
+            "answer": "yes"
+        },
+        {
+            "image_index": 605,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["cake"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 35,
+            "question_family_index": 0,
+            "image_filename": "COCO_train2014_000000000605.jpg",
+            "split": "val",
+            "question": "is there cake?",
+            "answer": "no"
+        },
+        {
+            "image_index": 681,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["clock"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 43,
+            "question_family_index": 0,
+            "image_filename": "COCO_train2014_000000000681.jpg",
+            "split": "val",
+            "question": "is there a clock?",
+            "answer": "no"
+        },
+        {
+            "image_index": 711,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["tv"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 46,
+            "question_family_index": 0,
+            "image_filename": "COCO_val2014_000000000711.jpg",
+            "split": "val",
+            "question": "is there a tv?",
+            "answer": "no"
+        },
+        {
+            "image_index": 762,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["tv"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 50,
+            "question_family_index": 0,
+            "image_filename": "COCO_train2014_000000000762.jpg",
+            "split": "val",
+            "question": "is there tv in room?",
+            "answer": "yes"
+        },
+        {
+            "image_index": 790,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["knife"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 52,
+            "question_family_index": 0,
+            "image_filename": "COCO_train2014_000000000790.jpg",
+            "split": "val",
+            "question": "is there a knife to cut the cake?",
+            "answer": "yes"
+        },
+
+        {
+            "image_index": 908,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["refrigerator"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "exist",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 59,
+            "question_family_index": 0,
+            "image_filename": "COCO_train2014_000000000908.jpg",
+            "split": "val",
+            "question": "is there a refrigerator?",
+            "answer": "no"
+        },
+        {
+            "image_index": 902,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["banana"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "count",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 61,
+            "question_family_index": 1,
+            "image_filename": "COCO_train2014_000000000902.jpg",
+            "split": "val",
+            "question": "how many bananas?",
+            "answer": "3"
+        },
+
+        {
+            "image_index": 1103,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["bird"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "count",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 65,
+            "question_family_index": 1,
+            "image_filename": "COCO_val2014_000000001103.jpg",
+            "split": "val",
+            "question": "how many birds?",
+            "answer": "6"
+        },
+        {
+            "image_index": 1153,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["banana"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "count",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 67,
+            "question_family_index": 1,
+            "image_filename": "COCO_val2014_000000001153.jpg",
+            "split": "val",
+            "question": "how many bananas do you see?",
+            "answer": "5"
+        },
+        {
+            "image_index": 1171,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["car"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "count",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 69,
+            "question_family_index": 1,
+            "image_filename": "COCO_val2014_000000001171.jpg",
+            "split": "val",
+            "question": "how many cars can you see?",
+            "answer": "1"
+        },
+        {
+            "image_index": 1228,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["zebra"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "count",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 70,
+            "question_family_index": 1,
+            "image_filename": "COCO_val2014_000000001228.jpg",
+            "split": "val",
+            "question": "about how many zebras?",
+            "answer": "5"
+        },
+        {
+            "image_index": 1238,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["elephant"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "count",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 71,
+            "question_family_index": 1,
+            "image_filename": "COCO_train2014_000000001238.jpg",
+            "split": "val",
+            "question": "how many elephants are there?",
+            "answer": "5"
+        },
+        {
+            "image_index": 1306,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["chair"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "count",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 72,
+            "question_family_index": 1,
+            "image_filename": "COCO_train2014_000000001306.jpg",
+            "split": "val",
+            "question": "how many chairs?",
+            "answer": "6"
+        },
+
+        {
+            "image_index": 1451,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["cow"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "count",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 76,
+            "question_family_index": 1,
+            "image_filename": "COCO_train2014_000000001451.jpg",
+            "split": "val",
+            "question": "how many cows are in the field?",
+            "answer": "5"
+        },
+        {
+            "image_index": 1803,
+            "program": [
+                {
+                    "inputs": [],
+                    "function": "scene",
+                    "value_inputs": []
+                },
+                {
+                    "inputs": [
+                        0
+                    ],
+                    "function": "filter_type",
+                    "value_inputs": ["sink"]
+                },
+                {
+                    "inputs": [
+                        1
+                    ],
+                    "function": "count",
+                    "value_inputs": []
+                }
+            ],
+            "question_index": 79,
+            "question_family_index": 1,
+            "image_filename": "COCO_val2014_000000001803.jpg",
+            "split": "val",
+            "question": "how many sinks are in the bathroom?",
+            "answer": "1"
+        }
+    ]
+}
