@@ -32,6 +32,8 @@ class TrainOptions(BaseOptions):
         # Training
         self.parser.add_argument('--reinforce', default=0, type=int, help='train reinforce')
         self.parser.add_argument('--vsa', default=0, type=int, help='use VSA executor')
+        self.parser.add_argument('--vsa_pretrain', default=0, type=int, help='use VSA executor with pretrain on NS-VQA executor')
+        self.parser.add_argument('--vsa_pretrain_steps', default=100000, type=int, help='use VSA executor with pretrain on NS-VQA executor')
         self.parser.add_argument('--ppo', default=0, type=int, help='train PPO')
         self.parser.add_argument('--batch_size', default=64, type=int, help='batch size')
         self.parser.add_argument('--learning_rate', default=7e-4, type=float, help='learning rate')

@@ -1,7 +1,7 @@
 import os
 import json
 import sys
-sys.path.append('/home/mshaban/ns-vqa/reason_split_heads')
+sys.path.append('/home/mshaban/docker_workspace/ns-vqa/reason_split_heads')
 from vsa_clevr.vsa_reasoner import VSAReasoner
 from vsa_clevr.vsa_scene_parser import VSASceneParser 
 from options.test_options import TestOptions
@@ -49,7 +49,7 @@ def check_program(pred, gt):
 
 HD_DIM = 30000
 VSA_TYPE = 'polar'
-THR = 6
+THR = 16
 
 opt = TestOptions().parse()
 loader = get_dataloader(opt, 'val')

@@ -2,6 +2,7 @@ import os
 import json
 import numpy as np
 import torch
+from collections import defaultdict 
 
 def mkdirs(paths):
     if isinstance(paths, list):
@@ -42,24 +43,16 @@ def load_scenes(scenes_json):
             scenes_dict = json.load(f)
             print(scenes_dict.keys())
         
-    scenes = []
+    scenes = defaultdict(list)
     for s in scenes_dict:
         table = []
         for i, o in enumerate(s['objects']):
             item = {}
             item['id'] = '%d-%d' % (s['image_index'], i)
-            if 'position' not in o:
-                item['position'] = [np.dot(o['3d_coords'], s['directions']['right']),
-                                    np.dot(o['3d_coords'], s['directions']['front']),
-                                    o['3d_coords'][2]]
-            else:
-                item['position'] = o['position']
-            item['color'] = o['color']
-            item['material'] = o['material']
-            item['shape'] = o['shape']
-            item['size'] = o['size']
+            item['2d_coords'] = o['2d_coords']
+            item['category'] = o['category']
             table.append(item)
-        scenes.append(table)
+        scenes[s['image_index']] = table
     return scenes
     
 

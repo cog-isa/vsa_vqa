@@ -1,7 +1,7 @@
 import os
 import json
 import sys
-sys.path.append('/home/mshaban/ns-vqa/reason')
+sys.path.append('/home/mshaban/docker_workspace/visdial-ns-vqa/ns-vqa/reason')
 from vsa_clevr.vsa_reasoner import VSAReasoner
 from vsa_clevr.vsa_scene_parser import VSASceneParser 
 from options.test_options import TestOptions
@@ -12,14 +12,7 @@ import utils.utils as utils
 import torch
 
 
-DESCR = {
-    'attribute': ['attribute', 'color', 'size', 'shape', 'material', 'coordinates'],
-    'color': ['purple', 'blue', 'brown', 'cyan', 'yellow', 'red', 'gray', 'green'],
-    'size': ['small', 'large'],
-    'shape': ['sphere', 'cylinder', 'cube'],
-    'material': ['metal', 'rubber'],
-    'coordinates': ['x_coord', 'y_coord', 'z_coord']
-}
+OBJECTS = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush']
 
 
 def find_clevr_question_type(out_mod):
@@ -47,13 +40,13 @@ def check_program(pred, gt):
             break
     return True
 
-HD_DIM = 20000
+HD_DIM = 10000
 VSA_TYPE = 'polar'
-THR = 6
+THR = 16    
 
 opt = TestOptions().parse()
 loader = get_dataloader(opt, 'val')
-parser = VSASceneParser('../data/attr_net/results/clevr_val_scenes_zerotrained.json', dim=HD_DIM, vsa_type=VSA_TYPE, thr=THR, descr=DESCR)
+parser = VSASceneParser(opt.clevr_val_scene_path, dim=HD_DIM, vsa_type=VSA_TYPE, thr=THR, objects=OBJECTS)
 model = Seq2seqParser(opt)
 
 print('| running test')
@@ -81,6 +74,7 @@ for x, y, ans, idx in loader:
 
     for i in range(pg_np.shape[0]):
         scene = parser.parse(idx_np[i])
+        #print(scene['scene_vec'].shape)
         executor = VSAReasoner(scene)
         
         pred_ans, _ = executor.run(pg_np[i], scene, guess=True)
@@ -100,13 +94,16 @@ for x, y, ans, idx in loader:
 result = {
     'count_acc': stats['count'] / stats['count_tot'],
     'exist_acc': stats['exist'] / stats['exist_tot'],
-    'compare_num_acc': stats['compare_num'] / stats ['compare_num_tot'],
-    'compare_attr_acc': stats['compare_attr'] / stats['compare_attr_tot'],
-    'query_acc': stats['query'] / stats['query_tot'],
     'program_acc': stats['correct_prog'] / stats['total'],
     'overall_acc': stats['correct_ans'] / stats['total']
 }
 print(result)
+print(stats['count'])
+print(stats['count_tot'])
+print(stats['exist'])
+print(stats['exist_tot'])
+print(stats['correct_ans'])
+print(stats['total'])
 
 utils.mkdirs(os.path.dirname(opt.save_result_path))
 with open(opt.save_result_path, 'w') as fout:

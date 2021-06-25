@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
+import numpy as np
 
 from . import create_seq2seq_net, get_vocab
 import utils.utils as utils
@@ -60,11 +61,39 @@ class Seq2seqParser():
     def set_reward(self, reward):
         self.reward = reward
 
-    def set_reward_ppo(self, reward):
+    def set_reward_ppo(self, reward, reward_list, length_list):
+        gamma = 0.95
         self.reward = reward
-        self.seq2seq.memory.rewards.append(reward)
-        self.seq2seq.memory.values.append(self.state_value.detach())
-        self.seq2seq.memory.advantages.append(reward - torch.mean(self.state_value).item())
+        length_list = torch.LongTensor(length_list)
+        
+        value = self.state_value.detach()
+        batch_size = self.opt.batch_size
+        batch_len = value.shape[-1]
+
+        reward_tensor = torch.zeros(batch_size, batch_len).cuda()
+
+        for i in range(reward_tensor.shape[0]):
+            if length_list[i] == 0:
+                continue
+            reward_tensor[i, length_list[i] - 1] = reward_list[i]
+            reward_tensor[i, :length_list[i] - 1] = gamma * value[i, 1:length_list[i]]
+
+        advantage = reward_tensor - value
+
+        value_padded = torch.zeros(self.opt.batch_size, self.opt.decoder_max_len).cuda()
+        reward_padded = torch.zeros(self.opt.batch_size, self.opt.decoder_max_len).cuda()
+        advantage_padded = torch.zeros(self.opt.batch_size, self.opt.decoder_max_len).cuda()
+
+        value_padded[:, :batch_len] = value
+        reward_padded[:, :batch_len] = reward_tensor
+        advantage_padded[:, :batch_len] = advantage
+        
+        self.seq2seq.memory.values.append(value_padded)
+        self.seq2seq.memory.rewards.append(reward_padded)
+        self.seq2seq.memory.advantages.append(advantage_padded)
+        self.seq2seq.memory.output_lengths.append(length_list)
+
+        return torch.mean(advantage).item()
 
     def supervised_forward(self):
         assert self.y is not None, 'Must set y value'
@@ -92,9 +121,10 @@ class Seq2seqParser():
         assert self.reward is not None, 'Must run forward sampling and set reward before REINFORCE'
         self.seq2seq.reinforce_backward(self.reward, entropy_factor)
 
-    def ppo_backward(self, optimizer, entropy_factor=0.0):
+    def ppo_backward(self, optimizer, critic_optimizer, batch_size, entropy_factor=0.0):
         assert self.reward is not None, 'Must run forward sampling and set reward before PPO'
-        self.seq2seq.ppo_backward(optimizer, self.reward, self.state_value, entropy_factor)
+        actor_loss, critic_loss, advantage = self.seq2seq.ppo_backward(optimizer, critic_optimizer, self.reward, self.state_value, batch_size, entropy_factor)
+        return actor_loss, critic_loss, advantage
 
     def parse(self):
         output_sequence = self.seq2seq.sample_output(self.x, self.input_lengths)
@@ -117,6 +147,7 @@ class Seq2seqParser():
             'end_id': opt.end_id,
             'word2vec_path': opt.word2vec_path,
             'fix_embedding': opt.fix_embedding,
+            'ppo': opt.ppo
         }
         return net_params
 

@@ -1,7 +1,7 @@
 import os
 import json
 import sys
-sys.path.append('/home/mshaban/ns-vqa/reason')
+sys.path.append('/home/mshaban/docker_workspace/visdial-ns-vqa/ns-vqa/reason')
 from options.test_options import TestOptions
 from datasets import get_dataloader
 from executors import get_executor
@@ -55,20 +55,45 @@ stats = {
     'correct_prog': 0,
     'total': 0
 }
+
+debug = 0 # DEBUG
+debug_rounds = 10
 for x, y, ans, idx in loader:
     with torch.no_grad():
         model.set_input(x, y)
         pred_program = model.parse()
-        #for i in range(27):
-        #    print(executor.vocab['program_idx_to_token'][pred_program[0][i].item()])
-        #exit(0)
+        if debug:
+            print('QUESTION:')
+            for i in range(16):
+                q_token = executor.vocab['question_idx_to_token'][x[0][i].item()]
+                if q_token == "<END>":
+                    break
+                if q_token == "<START>":
+                    continue
+                print(q_token, end=' ')
+
+            print('\nPROGRAM: ')
+            for i in range(27):
+                pg_token = executor.vocab['program_idx_to_token'][pred_program[0][i].item()]
+                if pg_token == "<END>":
+                    break
+                print(pg_token)
+            #debug_rounds -= 1
+            #if debug_rounds == 0:
+            #    exit(0)
 
     y_np, pg_np, idx_np, ans_np = y.detach().numpy(), pred_program.detach().numpy(), idx.detach().numpy(), ans.detach().numpy()
 
     
     for i in range(pg_np.shape[0]):
-        pred_ans, _ = executor.run(pg_np[i], idx_np[i], 'val', guess=False)
+        pred_ans, _ = executor.run(pg_np[i], idx_np[i], 'val', guess=True)
         gt_ans = executor.vocab['answer_idx_to_token'][ans_np[i]]
+
+        if debug:
+            print('PROGRAM ANSWER:')
+            print(pred_ans)
+            print('GT ANS:')
+            print(gt_ans)
 
         q_type = find_clevr_question_type(executor.vocab['program_idx_to_token'][y_np[i][1]])
         if pred_ans == gt_ans:
@@ -84,13 +109,16 @@ for x, y, ans, idx in loader:
 result = {
     'count_acc': stats['count'] / stats['count_tot'],
     'exist_acc': stats['exist'] / stats['exist_tot'],
-    'compare_num_acc': stats['compare_num'] / stats ['compare_num_tot'],
-    'compare_attr_acc': stats['compare_attr'] / stats['compare_attr_tot'],
-    'query_acc': stats['query'] / stats['query_tot'],
     'program_acc': stats['correct_prog'] / stats['total'],
     'overall_acc': stats['correct_ans'] / stats['total']
 }
 print(result)
+print(stats['count'])
+print(stats['count_tot'])
+print(stats['exist'])
+print(stats['exist_tot'])
+print(stats['correct_ans'])
+print(stats['total'])
 
 utils.mkdirs(os.path.dirname(opt.save_result_path))
 with open(opt.save_result_path, 'w') as fout:

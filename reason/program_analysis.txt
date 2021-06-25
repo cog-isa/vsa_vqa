@@ -1,0 +1,9053 @@
+| options
+run_dir: ../data/reason/results
+dataset: clevr
+shuffle: 1
+num_workers: 1
+manual_seed: None
+gpu_ids: [0]
+visualize: 0
+clevr_train_scene_path: ../data/raw/visdial/raw/coco_trainval_scenes.json
+clevr_val_scene_path: ../data/raw/visdial/raw/coco_trainval_scenes.json
+clevr_train_question_path: ../data/raw/visdial/h5/visdial_unannotated_questions_train.h5
+clevr_val_question_path: ../data/raw/visdial/h5/visdial_unannotated_questions_val.h5
+clevr_vocab_path: ../data/raw/visdial/raw/visdial_vocab.json
+load_checkpoint_path: ../data/reason/outputs/model_visdial_check/checkpoint_best.pt
+save_result_path: ../data/reason/results/result_vidial.json
+max_val_samples: None
+batch_size: 1
+| clevr val loader has 754 samples
+| creating clevr executor
+| loading checkpoint from ../data/reason/outputs/model_visdial_check/checkpoint_best.pt
+| running test
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 1/754 questions processed, accuracy 1.000000
+QUESTION:
+is there a toilet 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 2/754 questions processed, accuracy 1.000000
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 3/754 questions processed, accuracy 1.000000
+QUESTION:
+is there any other birds 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 4/754 questions processed, accuracy 1.000000
+QUESTION:
+is there a microwave 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 5/754 questions processed, accuracy 1.000000
+QUESTION:
+is there only 1 piece of broccoli 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 6/754 questions processed, accuracy 1.000000
+QUESTION:
+is there a couch or sofa around 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+yes
+| 7/754 questions processed, accuracy 1.000000
+QUESTION:
+is there a tv in the room 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 8/754 questions processed, accuracy 0.875000
+QUESTION:
+is there more than 1 person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 9/754 questions processed, accuracy 0.888889
+QUESTION:
+is there a logo on the cup 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 10/754 questions processed, accuracy 0.900000
+QUESTION:
+is there a tv 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+no
+| 11/754 questions processed, accuracy 0.818182
+QUESTION:
+is there carpeting on the floor 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 12/754 questions processed, accuracy 0.750000
+QUESTION:
+is there a refrigerator 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 13/754 questions processed, accuracy 0.692308
+QUESTION:
+is there more than 1 person in picture 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 14/754 questions processed, accuracy 0.714286
+QUESTION:
+is there label on the train 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 15/754 questions processed, accuracy 0.666667
+QUESTION:
+is there overhead powerline above the train 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 16/754 questions processed, accuracy 0.625000
+QUESTION:
+is there anyone on or near bench 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 17/754 questions processed, accuracy 0.647059
+QUESTION:
+is there a train station 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 18/754 questions processed, accuracy 0.666667
+QUESTION:
+is there anything else in the bowl besides salad and meat 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 19/754 questions processed, accuracy 0.684211
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 20/754 questions processed, accuracy 0.650000
+QUESTION:
+is there only 1 dog 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 21/754 questions processed, accuracy 0.619048
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 22/754 questions processed, accuracy 0.590909
+QUESTION:
+is there oven 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 23/754 questions processed, accuracy 0.608696
+QUESTION:
+is there anything written on bus 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 24/754 questions processed, accuracy 0.625000
+QUESTION:
+is there a bedside table 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 25/754 questions processed, accuracy 0.640000
+QUESTION:
+is there anything else on rack with apples 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 26/754 questions processed, accuracy 0.653846
+QUESTION:
+is there a chair out there 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 27/754 questions processed, accuracy 0.666667
+QUESTION:
+is there a person in the bathroom 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 28/754 questions processed, accuracy 0.678571
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 29/754 questions processed, accuracy 0.689655
+QUESTION:
+is there another train around 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 30/754 questions processed, accuracy 0.700000
+QUESTION:
+is there more than 1 giraffe 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 31/754 questions processed, accuracy 0.709677
+QUESTION:
+is there any cups on the table 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 32/754 questions processed, accuracy 0.718750
+QUESTION:
+is there a chair in the image 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 33/754 questions processed, accuracy 0.727273
+QUESTION:
+is there anything besides the desk and camera and keyboard 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 34/754 questions processed, accuracy 0.735294
+QUESTION:
+is there a tv 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 35/754 questions processed, accuracy 0.742857
+QUESTION:
+incorrect title i guess is there a red chair 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 36/754 questions processed, accuracy 0.722222
+QUESTION:
+is there a mirror above the sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 37/754 questions processed, accuracy 0.702703
+QUESTION:
+is there a cabinet below the sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 38/754 questions processed, accuracy 0.684211
+QUESTION:
+is there an apple on the plate 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 39/754 questions processed, accuracy 0.692308
+QUESTION:
+is there a microwave 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 40/754 questions processed, accuracy 0.700000
+QUESTION:
+is there a window above the sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 41/754 questions processed, accuracy 0.682927
+QUESTION:
+is there a knife visible 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 42/754 questions processed, accuracy 0.690476
+QUESTION:
+is there tag on bird 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 43/754 questions processed, accuracy 0.697674
+QUESTION:
+is there tv on bus 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 44/754 questions processed, accuracy 0.704545
+QUESTION:
+is there a computer mouse in the image 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 45/754 questions processed, accuracy 0.711111
+QUESTION:
+is there just 1 bear 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 46/754 questions processed, accuracy 0.695652
+QUESTION:
+is there a boat 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 47/754 questions processed, accuracy 0.702128
+QUESTION:
+is there a dog 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 48/754 questions processed, accuracy 0.708333
+QUESTION:
+ew! is there an bountiful supply of toilet paper 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 49/754 questions processed, accuracy 0.714286
+QUESTION:
+is there toilet paper on the floor 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 50/754 questions processed, accuracy 0.720000
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 51/754 questions processed, accuracy 0.705882
+QUESTION:
+is there a bench 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 52/754 questions processed, accuracy 0.711538
+QUESTION:
+is there only 1 giraffe 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 53/754 questions processed, accuracy 0.698113
+QUESTION:
+is there a lot of cars 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 54/754 questions processed, accuracy 0.703704
+QUESTION:
+is there cup or glass 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 55/754 questions processed, accuracy 0.709091
+QUESTION:
+is there anything on the hot dog 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 56/754 questions processed, accuracy 0.714286
+QUESTION:
+is there anything in the cupboard you can see 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 57/754 questions processed, accuracy 0.719298
+QUESTION:
+is there a clock on the oven 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 58/754 questions processed, accuracy 0.724138
+QUESTION:
+is there trucks with the luggage 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 59/754 questions processed, accuracy 0.728814
+QUESTION:
+is there a traffic light 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 60/754 questions processed, accuracy 0.716667
+QUESTION:
+is there a chair 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 61/754 questions processed, accuracy 0.721311
+QUESTION:
+is there catcher 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 62/754 questions processed, accuracy 0.709677
+QUESTION:
+is there anything in the vase 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 63/754 questions processed, accuracy 0.714286
+QUESTION:
+is there bed there 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 64/754 questions processed, accuracy 0.718750
+QUESTION:
+is there computer mouse nearby 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 65/754 questions processed, accuracy 0.723077
+QUESTION:
+is there a side of tums with the hot dogs 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 66/754 questions processed, accuracy 0.727273
+QUESTION:
+is there a stop sign 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 67/754 questions processed, accuracy 0.731343
+QUESTION:
+is there writing on the cake 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 68/754 questions processed, accuracy 0.735294
+QUESTION:
+is there only 1 cow 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 69/754 questions processed, accuracy 0.724638
+QUESTION:
+is there a pick fork 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 70/754 questions processed, accuracy 0.728571
+QUESTION:
+is there any cars around 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 71/754 questions processed, accuracy 0.732394
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 72/754 questions processed, accuracy 0.736111
+QUESTION:
+is there saddles on the horses 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 73/754 questions processed, accuracy 0.739726
+QUESTION:
+is there any choking hazards on bear 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 74/754 questions processed, accuracy 0.743243
+QUESTION:
+is there only 1 giraffe 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 75/754 questions processed, accuracy 0.733333
+QUESTION:
+is there a bedspread on the bed 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 76/754 questions processed, accuracy 0.736842
+QUESTION:
+is there more than 1 cat 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 77/754 questions processed, accuracy 0.740260
+QUESTION:
+is there design painted on bus 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 78/754 questions processed, accuracy 0.743590
+QUESTION:
+is there a logo on the train 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 79/754 questions processed, accuracy 0.734177
+QUESTION:
+is there only one person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 80/754 questions processed, accuracy 0.725000
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 81/754 questions processed, accuracy 0.716049
+QUESTION:
+is there anything in bowl 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 82/754 questions processed, accuracy 0.719512
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 83/754 questions processed, accuracy 0.722892
+QUESTION:
+what color frosting is there on the cupcakes 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 84/754 questions processed, accuracy 0.726190
+QUESTION:
+is there other birds 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 85/754 questions processed, accuracy 0.729412
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 86/754 questions processed, accuracy 0.732558
+QUESTION:
+is there anybody on the bus 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 87/754 questions processed, accuracy 0.735632
+QUESTION:
+is there any other cars on the street 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 88/754 questions processed, accuracy 0.738636
+QUESTION:
+is there writing on bus 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 89/754 questions processed, accuracy 0.730337
+QUESTION:
+is there a lot of water in the vase 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 90/754 questions processed, accuracy 0.733333
+QUESTION:
+is there cars 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 91/754 questions processed, accuracy 0.736264
+QUESTION:
+is there any writing on frisbee 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 92/754 questions processed, accuracy 0.739130
+QUESTION:
+is there a number on the train 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 93/754 questions processed, accuracy 0.741935
+QUESTION:
+is there writing on the train 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 94/754 questions processed, accuracy 0.734043
+QUESTION:
+is there butter on the pancakes 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 95/754 questions processed, accuracy 0.736842
+QUESTION:
+is there mouse attached to laptop 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 96/754 questions processed, accuracy 0.739583
+QUESTION:
+is there any advertising on the bus 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 97/754 questions processed, accuracy 0.731959
+QUESTION:
+is there a couch in the room 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+yes
+| 98/754 questions processed, accuracy 0.734694
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 99/754 questions processed, accuracy 0.737374
+QUESTION:
+is there a person there 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 100/754 questions processed, accuracy 0.740000
+QUESTION:
+is there a clock on wall 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 101/754 questions processed, accuracy 0.742574
+QUESTION:
+is there a mouse 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 102/754 questions processed, accuracy 0.745098
+QUESTION:
+is there only 1 person in picture 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 103/754 questions processed, accuracy 0.737864
+QUESTION:
+is there a toilet 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 104/754 questions processed, accuracy 0.740385
+QUESTION:
+is there a toothbrush holder 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 105/754 questions processed, accuracy 0.742857
+QUESTION:
+is there another person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 106/754 questions processed, accuracy 0.735849
+QUESTION:
+is there a computer mouse in the image 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 107/754 questions processed, accuracy 0.728972
+QUESTION:
+is there a big dog 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 108/754 questions processed, accuracy 0.731481
+QUESTION:
+is there a fence around the giraffe 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 109/754 questions processed, accuracy 0.724771
+QUESTION:
+is there just 1 zebra 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 110/754 questions processed, accuracy 0.727273
+QUESTION:
+is there something in toilet 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 111/754 questions processed, accuracy 0.729730
+QUESTION:
+is there an adult bear nearby 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 112/754 questions processed, accuracy 0.732143
+QUESTION:
+is there a dog is there a cat 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 113/754 questions processed, accuracy 0.734513
+QUESTION:
+is there person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 114/754 questions processed, accuracy 0.736842
+QUESTION:
+is there a path or sidewalk in front of the bench 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 115/754 questions processed, accuracy 0.739130
+QUESTION:
+is there other birds 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 116/754 questions processed, accuracy 0.741379
+QUESTION:
+is there any writing on the bus 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 117/754 questions processed, accuracy 0.735043
+QUESTION:
+is there any decoration around the clock 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 118/754 questions processed, accuracy 0.728814
+QUESTION:
+is there just a zebra and an ostrich 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 119/754 questions processed, accuracy 0.722689
+QUESTION:
+is there food for the giraffes 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 120/754 questions processed, accuracy 0.725000
+QUESTION:
+is there a chair 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 121/754 questions processed, accuracy 0.727273
+QUESTION:
+is there a catcher 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 122/754 questions processed, accuracy 0.729508
+QUESTION:
+is there more than 1 elephant 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 123/754 questions processed, accuracy 0.731707
+QUESTION:
+is there any cake on the table 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 124/754 questions processed, accuracy 0.725806
+QUESTION:
+is there a mouse 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 125/754 questions processed, accuracy 0.728000
+QUESTION:
+is there only 1 snowboarder 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 126/754 questions processed, accuracy 0.722222
+QUESTION:
+is there graffiti on cars 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 127/754 questions processed, accuracy 0.724409
+QUESTION:
+is there only 1 orange 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 128/754 questions processed, accuracy 0.718750
+QUESTION:
+is there just 1 bear 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 129/754 questions processed, accuracy 0.713178
+QUESTION:
+is there a person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 130/754 questions processed, accuracy 0.715385
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+yes
+| 131/754 questions processed, accuracy 0.717557
+QUESTION:
+is there a name on the boat 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 132/754 questions processed, accuracy 0.712121
+QUESTION:
+is there a baby zebra 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 133/754 questions processed, accuracy 0.714286
+QUESTION:
+is there anything else besides the zebra 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 134/754 questions processed, accuracy 0.716418
+QUESTION:
+is there soap near the sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 135/754 questions processed, accuracy 0.718519
+QUESTION:
+is there a cargo train 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 136/754 questions processed, accuracy 0.720588
+QUESTION:
+is there any smoke coming from the train 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 137/754 questions processed, accuracy 0.722628
+QUESTION:
+is there a catcher 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 138/754 questions processed, accuracy 0.717391
+QUESTION:
+is there trees in and around the giraffe 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 139/754 questions processed, accuracy 0.712230
+QUESTION:
+is there a boat 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 140/754 questions processed, accuracy 0.707143
+QUESTION:
+is there a black and red boat 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 141/754 questions processed, accuracy 0.702128
+QUESTION:
+is there a cat 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 142/754 questions processed, accuracy 0.704225
+QUESTION:
+is there a name on the bus 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 143/754 questions processed, accuracy 0.706294
+QUESTION:
+is there soap on the sink 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 144/754 questions processed, accuracy 0.708333
+QUESTION:
+is there cheese on the pizza 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 145/754 questions processed, accuracy 0.703448
+QUESTION:
+is there any visible sauce on the pizza 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 146/754 questions processed, accuracy 0.698630
+QUESTION:
+is there pepperoni on the pizza 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 147/754 questions processed, accuracy 0.700680
+QUESTION:
+is there a woman near the pizza 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 148/754 questions processed, accuracy 0.702703
+QUESTION:
+is there a man near the pizza 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 149/754 questions processed, accuracy 0.704698
+QUESTION:
+is there only 1 train 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 150/754 questions processed, accuracy 0.700000
+QUESTION:
+is there anyone on the boat 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 151/754 questions processed, accuracy 0.695364
+QUESTION:
+is there any cars or trucks 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 152/754 questions processed, accuracy 0.697368
+QUESTION:
+is there mouse visible 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 153/754 questions processed, accuracy 0.699346
+QUESTION:
+is there a helmet on or near the motorcycle 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 154/754 questions processed, accuracy 0.701299
+QUESTION:
+is there toilet paper 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 155/754 questions processed, accuracy 0.696774
+QUESTION:
+is there sink next to it 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 156/754 questions processed, accuracy 0.698718
+QUESTION:
+is there any decorations on toilet 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 157/754 questions processed, accuracy 0.700637
+QUESTION:
+is there a traffic light on the street corner 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 158/754 questions processed, accuracy 0.702532
+QUESTION:
+is there only 1 boat 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 159/754 questions processed, accuracy 0.698113
+QUESTION:
+is there any condiments on the hot dog 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 160/754 questions processed, accuracy 0.700000
+QUESTION:
+is there an umbrella over the table 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 161/754 questions processed, accuracy 0.701863
+QUESTION:
+is there just 1 bear 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 162/754 questions processed, accuracy 0.697531
+QUESTION:
+is there anyone on the motorcycle 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 163/754 questions processed, accuracy 0.699387
+QUESTION:
+is there writing on the bus 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 164/754 questions processed, accuracy 0.695122
+QUESTION:
+is there more than 1 cat 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 165/754 questions processed, accuracy 0.696970
+QUESTION:
+is there a dog too 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 166/754 questions processed, accuracy 0.698795
+QUESTION:
+is there a mirror above the sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 167/754 questions processed, accuracy 0.700599
+QUESTION:
+is there any ovens or cooking utensils near by 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 168/754 questions processed, accuracy 0.702381
+QUESTION:
+is there apples in the fruit 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 169/754 questions processed, accuracy 0.704142
+QUESTION:
+is there a fork 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 170/754 questions processed, accuracy 0.700000
+QUESTION:
+is there a sheep herder 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 171/754 questions processed, accuracy 0.701754
+QUESTION:
+is there a car 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 172/754 questions processed, accuracy 0.703488
+QUESTION:
+is there cheese on the sandwich 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 173/754 questions processed, accuracy 0.699422
+QUESTION:
+is there a lot of red sauce on the sandwich 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 174/754 questions processed, accuracy 0.701149
+QUESTION:
+is there any oranges 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 175/754 questions processed, accuracy 0.702857
+QUESTION:
+is there water in the sink 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 176/754 questions processed, accuracy 0.704545
+QUESTION:
+is there a bus 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 177/754 questions processed, accuracy 0.706215
+QUESTION:
+is there sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 178/754 questions processed, accuracy 0.707865
+QUESTION:
+is there a bus driver 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 179/754 questions processed, accuracy 0.709497
+QUESTION:
+is there a blanket on the bed 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 180/754 questions processed, accuracy 0.705556
+QUESTION:
+is there a sign on the train car 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 181/754 questions processed, accuracy 0.707182
+QUESTION:
+is there chair 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 182/754 questions processed, accuracy 0.708791
+QUESTION:
+is there a bed 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 183/754 questions processed, accuracy 0.704918
+QUESTION:
+is there a toilet paper holder 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 184/754 questions processed, accuracy 0.701087
+QUESTION:
+is there a pail under the cow 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 185/754 questions processed, accuracy 0.697297
+QUESTION:
+is there chair lift close 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 186/754 questions processed, accuracy 0.698925
+QUESTION:
+is there yellow on the cake 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 187/754 questions processed, accuracy 0.695187
+QUESTION:
+is there cars 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 188/754 questions processed, accuracy 0.696809
+QUESTION:
+is there a cow 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 189/754 questions processed, accuracy 0.698413
+QUESTION:
+is there a person pictured on the cover 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 190/754 questions processed, accuracy 0.694737
+QUESTION:
+is there water in the vase 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 191/754 questions processed, accuracy 0.691099
+QUESTION:
+is there a person visible 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 192/754 questions processed, accuracy 0.692708
+QUESTION:
+is there anything written on the bus 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 193/754 questions processed, accuracy 0.694301
+QUESTION:
+is there a toilet 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 194/754 questions processed, accuracy 0.690722
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 195/754 questions processed, accuracy 0.687179
+QUESTION:
+is there more than 1 couch in the room 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+yes
+| 196/754 questions processed, accuracy 0.688776
+QUESTION:
+is there anything else on the couch 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 197/754 questions processed, accuracy 0.690355
+QUESTION:
+is there a beer bottle or just the glass 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 198/754 questions processed, accuracy 0.691919
+QUESTION:
+is there a bed 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 199/754 questions processed, accuracy 0.693467
+QUESTION:
+is there container oranges are stacked in 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 200/754 questions processed, accuracy 0.695000
+QUESTION:
+is there a giraffe 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 201/754 questions processed, accuracy 0.691542
+QUESTION:
+is there toothbrushes 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 202/754 questions processed, accuracy 0.688119
+QUESTION:
+is there a blue toothbrush 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 203/754 questions processed, accuracy 0.689655
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 204/754 questions processed, accuracy 0.691176
+QUESTION:
+is there a fork 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 205/754 questions processed, accuracy 0.692683
+QUESTION:
+is there just 1 giraffe 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 206/754 questions processed, accuracy 0.689320
+QUESTION:
+is there graffiti on the train 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 207/754 questions processed, accuracy 0.690821
+QUESTION:
+is there a hot dog stand where the person is eating 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 208/754 questions processed, accuracy 0.692308
+QUESTION:
+is there a tv in the room 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 209/754 questions processed, accuracy 0.693780
+QUESTION:
+is there cars 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 210/754 questions processed, accuracy 0.695238
+QUESTION:
+is there a dog 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 211/754 questions processed, accuracy 0.696682
+QUESTION:
+is there pillows on the bed 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 212/754 questions processed, accuracy 0.698113
+QUESTION:
+is there a tv 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 213/754 questions processed, accuracy 0.699531
+QUESTION:
+is there just 1 chair 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 214/754 questions processed, accuracy 0.700935
+QUESTION:
+is there a catcher 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 215/754 questions processed, accuracy 0.697674
+QUESTION:
+is there a tv 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 216/754 questions processed, accuracy 0.699074
+QUESTION:
+is there a sofa or couch in the picture 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+yes
+| 217/754 questions processed, accuracy 0.700461
+QUESTION:
+is there a mouse 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 218/754 questions processed, accuracy 0.701835
+QUESTION:
+is there a knife 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 219/754 questions processed, accuracy 0.698630
+QUESTION:
+is there lettuce on the sandwich 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 220/754 questions processed, accuracy 0.700000
+QUESTION:
+is there tomato on the sandwich 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 221/754 questions processed, accuracy 0.701357
+QUESTION:
+is there cheese on the sandwich 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 222/754 questions processed, accuracy 0.702703
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+yes
+| 223/754 questions processed, accuracy 0.704036
+QUESTION:
+is there only 1 cow 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 224/754 questions processed, accuracy 0.705357
+QUESTION:
+is there more than 1 horse 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 225/754 questions processed, accuracy 0.706667
+QUESTION:
+is there a glass front on the oven door 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 226/754 questions processed, accuracy 0.703540
+QUESTION:
+what other food is there besides broccoli and tomatoes 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 227/754 questions processed, accuracy 0.704846
+QUESTION:
+is there carpet on the floor 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 228/754 questions processed, accuracy 0.706140
+QUESTION:
+is there a refrigerator 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 229/754 questions processed, accuracy 0.707424
+QUESTION:
+is there a table and chairs 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 230/754 questions processed, accuracy 0.708696
+QUESTION:
+is there a cup*u 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 231/754 questions processed, accuracy 0.709957
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 232/754 questions processed, accuracy 0.706897
+QUESTION:
+is there a spoon nearby 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 233/754 questions processed, accuracy 0.708155
+QUESTION:
+is there mayo on the sandwiches 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 234/754 questions processed, accuracy 0.709402
+QUESTION:
+is there any other bedroom furniture visible 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 235/754 questions processed, accuracy 0.710638
+QUESTION:
+is there food in the bowl 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 236/754 questions processed, accuracy 0.711864
+QUESTION:
+is there a car anywhere 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 237/754 questions processed, accuracy 0.713080
+QUESTION:
+is there a tv 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 238/754 questions processed, accuracy 0.714286
+QUESTION:
+is there traffic light 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 239/754 questions processed, accuracy 0.715481
+QUESTION:
+is there bus 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 240/754 questions processed, accuracy 0.716667
+QUESTION:
+is there toilet paper 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 241/754 questions processed, accuracy 0.717842
+QUESTION:
+is there frosting on the donut 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 242/754 questions processed, accuracy 0.714876
+QUESTION:
+is there any lettering on the truck 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 243/754 questions processed, accuracy 0.711934
+QUESTION:
+is there a spoon 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 244/754 questions processed, accuracy 0.713115
+QUESTION:
+is there black book 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 245/754 questions processed, accuracy 0.710204
+QUESTION:
+is there anything else in picture other than grass , dirt and cat 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 246/754 questions processed, accuracy 0.711382
+QUESTION:
+is there a number on truck 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 247/754 questions processed, accuracy 0.712551
+QUESTION:
+is there anything written on the train 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 248/754 questions processed, accuracy 0.709677
+QUESTION:
+is there more than 1 train 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 249/754 questions processed, accuracy 0.710843
+QUESTION:
+is there a person in the image 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 250/754 questions processed, accuracy 0.712000
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+yes
+| 251/754 questions processed, accuracy 0.713147
+QUESTION:
+is there a traffic light 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 252/754 questions processed, accuracy 0.710317
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+yes
+| 253/754 questions processed, accuracy 0.711462
+QUESTION:
+is there a person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 254/754 questions processed, accuracy 0.712598
+QUESTION:
+is there any writing on the cake 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 255/754 questions processed, accuracy 0.709804
+QUESTION:
+is there anything else on the cake that i should know about 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 256/754 questions processed, accuracy 0.710938
+QUESTION:
+is there a knife 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 257/754 questions processed, accuracy 0.708171
+QUESTION:
+is there any writing on the airplane 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 258/754 questions processed, accuracy 0.709302
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 259/754 questions processed, accuracy 0.710425
+QUESTION:
+is there a person in the scene 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 260/754 questions processed, accuracy 0.711538
+QUESTION:
+is there fence around giraffe 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 261/754 questions processed, accuracy 0.712644
+QUESTION:
+is there more than 1 train care 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 262/754 questions processed, accuracy 0.713740
+QUESTION:
+is there a birthday candle on the cake 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 263/754 questions processed, accuracy 0.711027
+QUESTION:
+is there any type of blanket on the elephant 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 264/754 questions processed, accuracy 0.712121
+QUESTION:
+is there carpet or hardwood floor in the empty room 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 265/754 questions processed, accuracy 0.713208
+QUESTION:
+is there carpet or hardwood in the kitchen 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 266/754 questions processed, accuracy 0.714286
+QUESTION:
+is there water in the vase 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 267/754 questions processed, accuracy 0.715356
+QUESTION:
+is there a bed seen 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 268/754 questions processed, accuracy 0.712687
+QUESTION:
+is there a person's hand 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 269/754 questions processed, accuracy 0.713755
+QUESTION:
+is there only 1 train 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 270/754 questions processed, accuracy 0.711111
+QUESTION:
+is there a fork 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 271/754 questions processed, accuracy 0.712177
+QUESTION:
+is there a chair in the picture 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 272/754 questions processed, accuracy 0.713235
+QUESTION:
+is there a computer keyboard in the picture 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 273/754 questions processed, accuracy 0.710623
+QUESTION:
+is there a computer mouse in the picture , 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 274/754 questions processed, accuracy 0.708029
+QUESTION:
+is there a logo on the truck 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 275/754 questions processed, accuracy 0.705455
+QUESTION:
+is there 1 car that is the main focus 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 276/754 questions processed, accuracy 0.706522
+QUESTION:
+is there a truck 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 277/754 questions processed, accuracy 0.703971
+QUESTION:
+is there a cell phone on the desk 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 278/754 questions processed, accuracy 0.705036
+QUESTION:
+is there a fork 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 279/754 questions processed, accuracy 0.706093
+QUESTION:
+is there any text on the airplane 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 280/754 questions processed, accuracy 0.703571
+QUESTION:
+is there anything else in sky with kites 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 281/754 questions processed, accuracy 0.704626
+QUESTION:
+is there trains 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 282/754 questions processed, accuracy 0.702128
+QUESTION:
+is there 2 full sandwiches 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 283/754 questions processed, accuracy 0.699647
+QUESTION:
+is there lettuce on the sandwiches 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 284/754 questions processed, accuracy 0.697183
+QUESTION:
+is there anything inside the suitcase 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 285/754 questions processed, accuracy 0.698246
+QUESTION:
+is there a design or pattern on the vase 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 286/754 questions processed, accuracy 0.699301
+QUESTION:
+is there anything next to the bear 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 287/754 questions processed, accuracy 0.700348
+QUESTION:
+is there writing on bus 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 288/754 questions processed, accuracy 0.701389
+QUESTION:
+is there any food near the dog 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 289/754 questions processed, accuracy 0.702422
+QUESTION:
+is there only 1 zebra 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 290/754 questions processed, accuracy 0.700000
+QUESTION:
+is there a spoon in the bowl 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 291/754 questions processed, accuracy 0.701031
+QUESTION:
+is there lettuce on the sandwich 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 292/754 questions processed, accuracy 0.698630
+QUESTION:
+is there more than 1 bunch of bananas 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 293/754 questions processed, accuracy 0.699659
+QUESTION:
+is there a cupboard under the sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 294/754 questions processed, accuracy 0.697279
+QUESTION:
+is there only a single cat 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 295/754 questions processed, accuracy 0.698305
+QUESTION:
+is there a design on the tie 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 296/754 questions processed, accuracy 0.695946
+QUESTION:
+is there a mouse 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 297/754 questions processed, accuracy 0.696970
+QUESTION:
+is there only mustard on the hot dog 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 298/754 questions processed, accuracy 0.694631
+QUESTION:
+is there carpet 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 299/754 questions processed, accuracy 0.695652
+QUESTION:
+how many pieces of pizza is there 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 300/754 questions processed, accuracy 0.696667
+QUESTION:
+is there a cup in the ice machine 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 301/754 questions processed, accuracy 0.697674
+QUESTION:
+is there a dog 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 302/754 questions processed, accuracy 0.698675
+QUESTION:
+is there only 1 person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 303/754 questions processed, accuracy 0.696370
+QUESTION:
+is there only 1 hot dog 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 304/754 questions processed, accuracy 0.694079
+QUESTION:
+is there a window or couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+no
+| 305/754 questions processed, accuracy 0.691803
+QUESTION:
+is there anything other than the cat and bed 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 306/754 questions processed, accuracy 0.692810
+QUESTION:
+is there just 1 skateboarder 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 307/754 questions processed, accuracy 0.690554
+QUESTION:
+is there anything on the bed 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 308/754 questions processed, accuracy 0.691558
+QUESTION:
+is there sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 309/754 questions processed, accuracy 0.692557
+QUESTION:
+is there a tv 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 310/754 questions processed, accuracy 0.693548
+QUESTION:
+is there other furniture besides the couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+no
+| 311/754 questions processed, accuracy 0.691318
+QUESTION:
+is there a swiss army knife 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 312/754 questions processed, accuracy 0.692308
+QUESTION:
+is there a cup holder visible 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 313/754 questions processed, accuracy 0.693291
+QUESTION:
+is there a person in the bed 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 314/754 questions processed, accuracy 0.694268
+QUESTION:
+is there something in the bowl 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 315/754 questions processed, accuracy 0.695238
+QUESTION:
+is there luggage in the cart 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 316/754 questions processed, accuracy 0.696203
+QUESTION:
+is there anything else next to the hot dogs aside from the salt shaker 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 317/754 questions processed, accuracy 0.697161
+QUESTION:
+is there any carpet 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 318/754 questions processed, accuracy 0.698113
+QUESTION:
+is there a toilet shown 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 319/754 questions processed, accuracy 0.695925
+QUESTION:
+is there toilet tissue shown 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 320/754 questions processed, accuracy 0.693750
+QUESTION:
+is there a sink 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 321/754 questions processed, accuracy 0.691589
+QUESTION:
+is there water in the sink 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 322/754 questions processed, accuracy 0.692547
+QUESTION:
+is there any chairs 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 323/754 questions processed, accuracy 0.693498
+QUESTION:
+is there a dog 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 324/754 questions processed, accuracy 0.691358
+QUESTION:
+is there a person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 325/754 questions processed, accuracy 0.692308
+QUESTION:
+is there a scarecrow 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 326/754 questions processed, accuracy 0.693252
+QUESTION:
+is there only 1 elephant 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 327/754 questions processed, accuracy 0.691131
+QUESTION:
+is there a keyboard 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 328/754 questions processed, accuracy 0.689024
+QUESTION:
+is there a mouse 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+yes
+| 329/754 questions processed, accuracy 0.689970
+QUESTION:
+is there a bird in the sky 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 330/754 questions processed, accuracy 0.690909
+QUESTION:
+is there more than 1 person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 331/754 questions processed, accuracy 0.691843
+QUESTION:
+is there a couch 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 332/754 questions processed, accuracy 0.692771
+QUESTION:
+is there a cup of coffee with the coffee maker 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 333/754 questions processed, accuracy 0.693694
+QUESTION:
+is there birds 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 334/754 questions processed, accuracy 0.694611
+QUESTION:
+is there any small elephants 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 335/754 questions processed, accuracy 0.695522
+QUESTION:
+is there a black car on the road 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 336/754 questions processed, accuracy 0.696429
+QUESTION:
+is there mustard on the hot dogs 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 337/754 questions processed, accuracy 0.697329
+QUESTION:
+is there cars 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 338/754 questions processed, accuracy 0.698225
+QUESTION:
+is there any cars 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 339/754 questions processed, accuracy 0.699115
+QUESTION:
+is there any person 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 340/754 questions processed, accuracy 0.697059
+QUESTION:
+is there a person with the cat 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 341/754 questions processed, accuracy 0.697947
+QUESTION:
+is there anything else next to the toothbrush 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 342/754 questions processed, accuracy 0.698830
+QUESTION:
+is there only 1 zebra 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 343/754 questions processed, accuracy 0.699708
+QUESTION:
+is there anything written on bus 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 344/754 questions processed, accuracy 0.697674
+QUESTION:
+is there something in microwave 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+yes
+GT ANS:
+no
+| 345/754 questions processed, accuracy 0.695652
+QUESTION:
+is there lettuce on the sandwich 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 346/754 questions processed, accuracy 0.696532
+QUESTION:
+is there a pickle on the sandwich 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 347/754 questions processed, accuracy 0.697406
+QUESTION:
+is there meat other than chicken on the sandwich 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 348/754 questions processed, accuracy 0.698276
+QUESTION:
+is there cheese on the sandwich 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 349/754 questions processed, accuracy 0.699140
+QUESTION:
+is there anyone under the umbrella 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 350/754 questions processed, accuracy 0.700000
+QUESTION:
+is there writing on the train 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 351/754 questions processed, accuracy 0.700855
+QUESTION:
+is there people on top of cake 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 352/754 questions processed, accuracy 0.701705
+QUESTION:
+is there a chair 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 353/754 questions processed, accuracy 0.702550
+QUESTION:
+is there any soap on the sink 
+PROGRAM: 
+exist
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 354/754 questions processed, accuracy 0.703390
+QUESTION:
+is there any person inside 
+PROGRAM: 
+exist
+filter_type[microwave]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 355/754 questions processed, accuracy 0.704225
+QUESTION:
+is there a clock in the picture 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+yes
+| 356/754 questions processed, accuracy 0.702247
+QUESTION:
+is there anything in boat 
+PROGRAM: 
+exist
+filter_type[mouse]
+filter_type[mouse]
+scene
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+no
+| 357/754 questions processed, accuracy 0.703081
+QUESTION:
+how many books are on the desk 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 358/754 questions processed, accuracy 0.701117
+QUESTION:
+how many giraffes 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+5
+| 359/754 questions processed, accuracy 0.701950
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+8
+GT ANS:
+8
+| 360/754 questions processed, accuracy 0.702778
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+2
+| 361/754 questions processed, accuracy 0.700831
+QUESTION:
+how many sheep are there 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 362/754 questions processed, accuracy 0.701657
+QUESTION:
+how many cats are there 
+PROGRAM: 
+count
+filter_type[cat]
+filter_type[cat]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 363/754 questions processed, accuracy 0.702479
+QUESTION:
+how many banana pieces do you see 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 364/754 questions processed, accuracy 0.700549
+QUESTION:
+how many boats can you see 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 365/754 questions processed, accuracy 0.698630
+QUESTION:
+how many zebra are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 366/754 questions processed, accuracy 0.699454
+QUESTION:
+how many birds are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+3
+| 367/754 questions processed, accuracy 0.697548
+QUESTION:
+how many birds are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 368/754 questions processed, accuracy 0.698370
+QUESTION:
+how many people are on elephant 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 369/754 questions processed, accuracy 0.696477
+QUESTION:
+how many cars are there 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+3
+| 370/754 questions processed, accuracy 0.694595
+QUESTION:
+how many trucks 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+3
+| 371/754 questions processed, accuracy 0.692722
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+5
+| 372/754 questions processed, accuracy 0.693548
+QUESTION:
+how many giraffe are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 373/754 questions processed, accuracy 0.694370
+QUESTION:
+how many toilets 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+1
+| 374/754 questions processed, accuracy 0.692513
+QUESTION:
+how many pieces of broccoli 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+11
+GT ANS:
+4
+| 375/754 questions processed, accuracy 0.690667
+QUESTION:
+how many bears 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+2
+| 376/754 questions processed, accuracy 0.688830
+QUESTION:
+how many sheep 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 377/754 questions processed, accuracy 0.689655
+QUESTION:
+how many bags of luggage are on the cart 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 378/754 questions processed, accuracy 0.687831
+QUESTION:
+how many hot dogs 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 379/754 questions processed, accuracy 0.688654
+QUESTION:
+how many donuts can you see 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+14
+GT ANS:
+21
+| 380/754 questions processed, accuracy 0.686842
+QUESTION:
+how many bananas do you see 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+15
+| 381/754 questions processed, accuracy 0.685039
+QUESTION:
+how many apple are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+35
+GT ANS:
+15
+| 382/754 questions processed, accuracy 0.683246
+QUESTION:
+how many kites are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+10
+| 383/754 questions processed, accuracy 0.681462
+QUESTION:
+how many cars do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+10
+GT ANS:
+10
+| 384/754 questions processed, accuracy 0.682292
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+3
+| 385/754 questions processed, accuracy 0.680519
+QUESTION:
+how many serving bowls do you see in the picture 
+PROGRAM: 
+count
+filter_type[bowl]
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+8
+| 386/754 questions processed, accuracy 0.678756
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 387/754 questions processed, accuracy 0.679587
+QUESTION:
+how many umbrellas are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+6
+| 388/754 questions processed, accuracy 0.680412
+QUESTION:
+how many pink umbrellas are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+1
+| 389/754 questions processed, accuracy 0.678663
+QUESTION:
+how many orange umbrellas are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+1
+| 390/754 questions processed, accuracy 0.676923
+QUESTION:
+how many yellow umbrellas are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+2
+| 391/754 questions processed, accuracy 0.675192
+QUESTION:
+how many suitcases are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+8
+GT ANS:
+10
+| 392/754 questions processed, accuracy 0.673469
+QUESTION:
+how many couches they living room have 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 393/754 questions processed, accuracy 0.671756
+QUESTION:
+can you tell how many sheep or just a bunch of them 
+PROGRAM: 
+count
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 394/754 questions processed, accuracy 0.672589
+QUESTION:
+how many apples are in the white bowl 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 395/754 questions processed, accuracy 0.670886
+QUESTION:
+how many boats 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 396/754 questions processed, accuracy 0.669192
+QUESTION:
+how many green toothbrushes can be seen 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+1
+| 397/754 questions processed, accuracy 0.667506
+QUESTION:
+how many toothbrushes 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 398/754 questions processed, accuracy 0.665829
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+23
+GT ANS:
+10
+| 399/754 questions processed, accuracy 0.664160
+QUESTION:
+how many horses are there 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+2
+| 400/754 questions processed, accuracy 0.662500
+QUESTION:
+how many people are tending to the horses 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 401/754 questions processed, accuracy 0.660848
+QUESTION:
+how many train cars can you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 402/754 questions processed, accuracy 0.661692
+QUESTION:
+how many sides of clock can you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+39
+GT ANS:
+2
+| 403/754 questions processed, accuracy 0.660050
+QUESTION:
+how many books 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 404/754 questions processed, accuracy 0.658416
+QUESTION:
+how many giraffes 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+6
+| 405/754 questions processed, accuracy 0.659259
+QUESTION:
+how many giraffes 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+1
+| 406/754 questions processed, accuracy 0.657635
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 407/754 questions processed, accuracy 0.658477
+QUESTION:
+how many people are on each elephant 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 408/754 questions processed, accuracy 0.656863
+QUESTION:
+how many motorcycles can you see 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+8
+| 409/754 questions processed, accuracy 0.655257
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 410/754 questions processed, accuracy 0.656098
+QUESTION:
+about how many cars do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 411/754 questions processed, accuracy 0.656934
+QUESTION:
+oh i'm sorry the description said cattle how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+13
+GT ANS:
+10
+| 412/754 questions processed, accuracy 0.655340
+QUESTION:
+how many tires can you see on the truck 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 413/754 questions processed, accuracy 0.653753
+QUESTION:
+how many kites 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+7
+| 414/754 questions processed, accuracy 0.652174
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 415/754 questions processed, accuracy 0.653012
+QUESTION:
+how many kites 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+10
+| 416/754 questions processed, accuracy 0.651442
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 417/754 questions processed, accuracy 0.652278
+QUESTION:
+how many zebras are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 418/754 questions processed, accuracy 0.653110
+QUESTION:
+how many chairs in the photo 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 419/754 questions processed, accuracy 0.653938
+QUESTION:
+how many teddy bears are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 420/754 questions processed, accuracy 0.654762
+QUESTION:
+how many teddy bears do you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+3
+| 421/754 questions processed, accuracy 0.653207
+QUESTION:
+how many horses are there 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+scene
+scene
+PROGRAM ANSWER:
+10
+GT ANS:
+8
+| 422/754 questions processed, accuracy 0.651659
+QUESTION:
+how many carts 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 423/754 questions processed, accuracy 0.650118
+QUESTION:
+how many hotdogs 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+2
+| 424/754 questions processed, accuracy 0.648585
+QUESTION:
+about how many boats are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 425/754 questions processed, accuracy 0.647059
+QUESTION:
+how many cars can you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+10
+GT ANS:
+0
+| 426/754 questions processed, accuracy 0.645540
+QUESTION:
+how many people are stand around the elephant 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 427/754 questions processed, accuracy 0.644028
+QUESTION:
+how many cars are in picture total 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+11
+| 428/754 questions processed, accuracy 0.642523
+QUESTION:
+how many motorcycles are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+8
+GT ANS:
+7
+| 429/754 questions processed, accuracy 0.641026
+QUESTION:
+how many skateboards are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+16
+GT ANS:
+1
+| 430/754 questions processed, accuracy 0.639535
+QUESTION:
+how many cars do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+10
+GT ANS:
+7
+| 431/754 questions processed, accuracy 0.638051
+QUESTION:
+how many beds 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+2
+| 432/754 questions processed, accuracy 0.636574
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 433/754 questions processed, accuracy 0.637413
+QUESTION:
+how many pizza boxes are there 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 434/754 questions processed, accuracy 0.635945
+QUESTION:
+how many umbrellas can you count 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+24
+GT ANS:
+15
+| 435/754 questions processed, accuracy 0.634483
+QUESTION:
+how many clocks do you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+1
+| 436/754 questions processed, accuracy 0.633028
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 437/754 questions processed, accuracy 0.631579
+QUESTION:
+how many giraffes are there 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 438/754 questions processed, accuracy 0.632420
+QUESTION:
+how many dogs 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+1
+| 439/754 questions processed, accuracy 0.630979
+QUESTION:
+how many zebras are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+14
+GT ANS:
+35
+| 440/754 questions processed, accuracy 0.629545
+QUESTION:
+how many horses are there 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 441/754 questions processed, accuracy 0.630385
+QUESTION:
+how many dogs are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+24
+GT ANS:
+1
+| 442/754 questions processed, accuracy 0.628959
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+24
+GT ANS:
+0
+| 443/754 questions processed, accuracy 0.627540
+QUESTION:
+how many birds do you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+2
+| 444/754 questions processed, accuracy 0.626126
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 445/754 questions processed, accuracy 0.626966
+QUESTION:
+how many of oranges could fit into bowl 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 446/754 questions processed, accuracy 0.625561
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+11
+GT ANS:
+0
+| 447/754 questions processed, accuracy 0.624161
+QUESTION:
+how many horse 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+31
+GT ANS:
+15
+| 448/754 questions processed, accuracy 0.622768
+QUESTION:
+how many sinks 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+2
+| 449/754 questions processed, accuracy 0.621381
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 450/754 questions processed, accuracy 0.622222
+QUESTION:
+how many pizzas are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+4
+| 451/754 questions processed, accuracy 0.620843
+QUESTION:
+how many kites in sky 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 452/754 questions processed, accuracy 0.619469
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 453/754 questions processed, accuracy 0.620309
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 454/754 questions processed, accuracy 0.621145
+QUESTION:
+how many cars do it have 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 455/754 questions processed, accuracy 0.619780
+QUESTION:
+how many floors are on the bus 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 456/754 questions processed, accuracy 0.618421
+QUESTION:
+how many doors are on the bus 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 457/754 questions processed, accuracy 0.617068
+QUESTION:
+how many donuts can you see 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+13
+GT ANS:
+12
+| 458/754 questions processed, accuracy 0.615721
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 459/754 questions processed, accuracy 0.616558
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+4
+| 460/754 questions processed, accuracy 0.615217
+QUESTION:
+how many pillows on the bed 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 461/754 questions processed, accuracy 0.616052
+QUESTION:
+how many donuts are there 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+12
+| 462/754 questions processed, accuracy 0.616883
+QUESTION:
+how many dogs are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+1
+| 463/754 questions processed, accuracy 0.615551
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+3
+| 464/754 questions processed, accuracy 0.614224
+QUESTION:
+how many barber chairs are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+13
+GT ANS:
+1
+| 465/754 questions processed, accuracy 0.612903
+QUESTION:
+how many people around bench 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 466/754 questions processed, accuracy 0.611588
+QUESTION:
+how many laptops are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+3
+| 467/754 questions processed, accuracy 0.610278
+QUESTION:
+how many birds are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+18
+GT ANS:
+12
+| 468/754 questions processed, accuracy 0.608974
+QUESTION:
+how many skateboards are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+1
+| 469/754 questions processed, accuracy 0.607676
+QUESTION:
+how many books 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+10
+| 470/754 questions processed, accuracy 0.606383
+QUESTION:
+how many zebra 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 471/754 questions processed, accuracy 0.607219
+QUESTION:
+how many airplanes are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+3
+| 472/754 questions processed, accuracy 0.605932
+QUESTION:
+how many books are there 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 473/754 questions processed, accuracy 0.604651
+QUESTION:
+how many birds 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+22
+GT ANS:
+0
+| 474/754 questions processed, accuracy 0.603376
+QUESTION:
+how many boats do you see 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 475/754 questions processed, accuracy 0.602105
+QUESTION:
+how many snowboards 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+0
+| 476/754 questions processed, accuracy 0.600840
+QUESTION:
+how many cakes are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+9
+| 477/754 questions processed, accuracy 0.599581
+QUESTION:
+how many chairs are there 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 478/754 questions processed, accuracy 0.598326
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 479/754 questions processed, accuracy 0.599165
+QUESTION:
+how many bushes do you see 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 480/754 questions processed, accuracy 0.600000
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+5
+| 481/754 questions processed, accuracy 0.600832
+QUESTION:
+how many chairs are at dining table 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 482/754 questions processed, accuracy 0.599585
+QUESTION:
+about how many books 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+15
+| 483/754 questions processed, accuracy 0.598344
+QUESTION:
+how many wheels does the truck have 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+4
+| 484/754 questions processed, accuracy 0.597107
+QUESTION:
+how many zebra 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+4
+| 485/754 questions processed, accuracy 0.595876
+QUESTION:
+how many toothbrushes 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 486/754 questions processed, accuracy 0.594650
+QUESTION:
+how many slices of orange 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 487/754 questions processed, accuracy 0.595483
+QUESTION:
+how many pieces of pizza 
+PROGRAM: 
+count
+filter_type[horse]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+16
+| 488/754 questions processed, accuracy 0.594262
+QUESTION:
+how many hot dogs do you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+2
+| 489/754 questions processed, accuracy 0.593047
+QUESTION:
+how many cars can you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+5
+| 490/754 questions processed, accuracy 0.591837
+QUESTION:
+how many kites are flying 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+11
+| 491/754 questions processed, accuracy 0.590631
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+15
+GT ANS:
+0
+| 492/754 questions processed, accuracy 0.589431
+QUESTION:
+how many cars are there 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+4
+| 493/754 questions processed, accuracy 0.588235
+QUESTION:
+how many bicycles are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 494/754 questions processed, accuracy 0.587045
+QUESTION:
+how many books are in the stack 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 495/754 questions processed, accuracy 0.585859
+QUESTION:
+how many motorcycles are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 496/754 questions processed, accuracy 0.586694
+QUESTION:
+how many trains 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+3
+| 497/754 questions processed, accuracy 0.585513
+QUESTION:
+how many elephants 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 498/754 questions processed, accuracy 0.586345
+QUESTION:
+how many oven racks do you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+2
+| 499/754 questions processed, accuracy 0.585170
+QUESTION:
+how many cars on train 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 500/754 questions processed, accuracy 0.584000
+QUESTION:
+how many people in the car 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 501/754 questions processed, accuracy 0.584830
+QUESTION:
+how many cars can be seen 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+2
+| 502/754 questions processed, accuracy 0.583665
+QUESTION:
+how many birds are in the picture 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 503/754 questions processed, accuracy 0.584493
+QUESTION:
+how many cats are there 
+PROGRAM: 
+count
+filter_type[cat]
+filter_type[cat]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 504/754 questions processed, accuracy 0.585317
+QUESTION:
+how many cows do you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+8
+GT ANS:
+6
+| 505/754 questions processed, accuracy 0.584158
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 506/754 questions processed, accuracy 0.584980
+QUESTION:
+how many kites can you see 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+20
+| 507/754 questions processed, accuracy 0.583826
+QUESTION:
+how many traffic lights 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 508/754 questions processed, accuracy 0.584646
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+7
+| 509/754 questions processed, accuracy 0.585462
+QUESTION:
+how many layers is the cake 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+3
+| 510/754 questions processed, accuracy 0.584314
+QUESTION:
+how many birds can you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+2
+| 511/754 questions processed, accuracy 0.583170
+QUESTION:
+how many dogs and cats are there 
+PROGRAM: 
+count
+filter_type[cat]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 512/754 questions processed, accuracy 0.583984
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 513/754 questions processed, accuracy 0.584795
+QUESTION:
+how many sandwiches are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+11
+GT ANS:
+2
+| 514/754 questions processed, accuracy 0.583658
+QUESTION:
+how many giraffe 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 515/754 questions processed, accuracy 0.584466
+QUESTION:
+how many bananas 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+50
+| 516/754 questions processed, accuracy 0.583333
+QUESTION:
+how many cars are there 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+7
+| 517/754 questions processed, accuracy 0.582205
+QUESTION:
+how many laptops 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+13
+GT ANS:
+1
+| 518/754 questions processed, accuracy 0.581081
+QUESTION:
+about how many carrot slices do you see 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+10
+| 519/754 questions processed, accuracy 0.579961
+QUESTION:
+how many other vehicles besides the buses 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 520/754 questions processed, accuracy 0.578846
+QUESTION:
+how many couches or sofas are there 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 521/754 questions processed, accuracy 0.577735
+QUESTION:
+how many cows are present 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+10
+GT ANS:
+10
+| 522/754 questions processed, accuracy 0.578544
+QUESTION:
+how many cups of juice 
+PROGRAM: 
+count
+filter_type[bowl]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 523/754 questions processed, accuracy 0.577438
+QUESTION:
+how many cows 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+9
+GT ANS:
+8
+| 524/754 questions processed, accuracy 0.576336
+QUESTION:
+how many zebras 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+1
+| 525/754 questions processed, accuracy 0.575238
+QUESTION:
+how many traffic lights are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+13
+| 526/754 questions processed, accuracy 0.574144
+QUESTION:
+how many zebra are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 527/754 questions processed, accuracy 0.574953
+QUESTION:
+how many dogs are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+9
+GT ANS:
+2
+| 528/754 questions processed, accuracy 0.573864
+QUESTION:
+about how many sheep are there 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+7
+| 529/754 questions processed, accuracy 0.572779
+QUESTION:
+how many birds 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 530/754 questions processed, accuracy 0.573585
+QUESTION:
+how many zebras are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+10
+| 531/754 questions processed, accuracy 0.572505
+QUESTION:
+how many cows 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+9
+GT ANS:
+1
+| 532/754 questions processed, accuracy 0.571429
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+23
+GT ANS:
+2
+| 533/754 questions processed, accuracy 0.570356
+QUESTION:
+how many books is he jumping over 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+12
+| 534/754 questions processed, accuracy 0.569288
+QUESTION:
+how many cars on the train do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 535/754 questions processed, accuracy 0.568224
+QUESTION:
+how many giraffes 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 536/754 questions processed, accuracy 0.569030
+QUESTION:
+how many books will be there in the shelf 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 537/754 questions processed, accuracy 0.569832
+QUESTION:
+how many motorcycles can you see 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+11
+GT ANS:
+12
+| 538/754 questions processed, accuracy 0.568773
+QUESTION:
+how many cars are there 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+0
+| 539/754 questions processed, accuracy 0.567718
+QUESTION:
+how many motorcycles are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+13
+GT ANS:
+50
+| 540/754 questions processed, accuracy 0.566667
+QUESTION:
+how many couches are there 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 541/754 questions processed, accuracy 0.567468
+QUESTION:
+how many donuts do you see 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+3
+| 542/754 questions processed, accuracy 0.566421
+QUESTION:
+how many giraffe are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+2
+| 543/754 questions processed, accuracy 0.565378
+QUESTION:
+how many shelves of books are there 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 544/754 questions processed, accuracy 0.564338
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+4
+| 545/754 questions processed, accuracy 0.563303
+QUESTION:
+how many birds are visible 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+3
+| 546/754 questions processed, accuracy 0.562271
+QUESTION:
+how many skis 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 547/754 questions processed, accuracy 0.563071
+QUESTION:
+how many zebras are there all together 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 548/754 questions processed, accuracy 0.563869
+QUESTION:
+how many boats 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+16
+| 549/754 questions processed, accuracy 0.562842
+QUESTION:
+how many trains you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+2
+| 550/754 questions processed, accuracy 0.561818
+QUESTION:
+how many zebras 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 551/754 questions processed, accuracy 0.562613
+QUESTION:
+how many towels do you think it took to make 1 elephant 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+2
+| 552/754 questions processed, accuracy 0.561594
+QUESTION:
+how many cars do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+3
+| 553/754 questions processed, accuracy 0.560579
+QUESTION:
+how many zebras do you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+5
+| 554/754 questions processed, accuracy 0.561372
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+3
+| 555/754 questions processed, accuracy 0.560360
+QUESTION:
+how many army personnel can you see 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 556/754 questions processed, accuracy 0.561151
+QUESTION:
+how many umbrellas are in the photo 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+10
+| 557/754 questions processed, accuracy 0.560144
+QUESTION:
+how many cars can you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+0
+| 558/754 questions processed, accuracy 0.559140
+QUESTION:
+how many cars can you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+20
+| 559/754 questions processed, accuracy 0.558140
+QUESTION:
+how many lights does the train have in front 
+PROGRAM: 
+count
+filter_type[horse]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 560/754 questions processed, accuracy 0.557143
+QUESTION:
+how many pancakes on the plate 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 561/754 questions processed, accuracy 0.556150
+QUESTION:
+how many books are there 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+20
+| 562/754 questions processed, accuracy 0.555160
+QUESTION:
+how many cars are on it 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+8
+| 563/754 questions processed, accuracy 0.554174
+QUESTION:
+how many cars on train 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 564/754 questions processed, accuracy 0.553191
+QUESTION:
+can you tell how many rows there are of chairs 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 565/754 questions processed, accuracy 0.552212
+QUESTION:
+how many smaller boats do you see 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+10
+| 566/754 questions processed, accuracy 0.551237
+QUESTION:
+how many zebras are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+5
+| 567/754 questions processed, accuracy 0.552028
+QUESTION:
+how many cars do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+8
+GT ANS:
+6
+| 568/754 questions processed, accuracy 0.551056
+QUESTION:
+how many giraffes 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 569/754 questions processed, accuracy 0.551845
+QUESTION:
+how many giraffes 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 570/754 questions processed, accuracy 0.552632
+QUESTION:
+how many bananas do you think are visible 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+100
+| 571/754 questions processed, accuracy 0.551664
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+4
+| 572/754 questions processed, accuracy 0.550699
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 573/754 questions processed, accuracy 0.551483
+QUESTION:
+how many airplanes do you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+9
+GT ANS:
+9
+| 574/754 questions processed, accuracy 0.552265
+QUESTION:
+how many cows total 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+4
+| 575/754 questions processed, accuracy 0.551304
+QUESTION:
+how many sheep 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 576/754 questions processed, accuracy 0.552083
+QUESTION:
+around how many other cars can be seen 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+0
+| 577/754 questions processed, accuracy 0.551127
+QUESTION:
+how many bunk beds are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+13
+GT ANS:
+1
+| 578/754 questions processed, accuracy 0.550173
+QUESTION:
+how many pillows are on the bed 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 579/754 questions processed, accuracy 0.549223
+QUESTION:
+how many cars do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 580/754 questions processed, accuracy 0.548276
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+5
+| 581/754 questions processed, accuracy 0.547332
+QUESTION:
+how many coffee cups are in this picture 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 582/754 questions processed, accuracy 0.546392
+QUESTION:
+how many bananas are hanging 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+50
+| 583/754 questions processed, accuracy 0.545455
+QUESTION:
+how many buses 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+25
+| 584/754 questions processed, accuracy 0.544521
+QUESTION:
+how many books are seen 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 585/754 questions processed, accuracy 0.543590
+QUESTION:
+how many suitcases 
+PROGRAM: 
+count
+filter_type[bowl]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 586/754 questions processed, accuracy 0.542662
+QUESTION:
+how many big suitcases 
+PROGRAM: 
+count
+filter_type[horse]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 587/754 questions processed, accuracy 0.543441
+QUESTION:
+how many cars do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+12
+| 588/754 questions processed, accuracy 0.544218
+QUESTION:
+how many cows 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+3
+| 589/754 questions processed, accuracy 0.543294
+QUESTION:
+how many umbrellas do you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+3
+| 590/754 questions processed, accuracy 0.542373
+QUESTION:
+how many chairs are at the table 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 591/754 questions processed, accuracy 0.543147
+QUESTION:
+how many scissors are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+14
+GT ANS:
+0
+| 592/754 questions processed, accuracy 0.542230
+QUESTION:
+how many bottles of wine 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 593/754 questions processed, accuracy 0.543002
+QUESTION:
+how many cattle 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+9
+GT ANS:
+8
+| 594/754 questions processed, accuracy 0.542088
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+3
+| 595/754 questions processed, accuracy 0.541176
+QUESTION:
+how many giraffes are there total 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 596/754 questions processed, accuracy 0.541946
+QUESTION:
+how many umbrellas are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+32
+GT ANS:
+6
+| 597/754 questions processed, accuracy 0.541039
+QUESTION:
+how many kites do you see 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+6
+| 598/754 questions processed, accuracy 0.540134
+QUESTION:
+how many zebras you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+1
+| 599/754 questions processed, accuracy 0.539232
+QUESTION:
+how many elephants 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+5
+| 600/754 questions processed, accuracy 0.538333
+QUESTION:
+how many giraffes are there 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 601/754 questions processed, accuracy 0.539101
+QUESTION:
+how many books do you think is on the bookshelf 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+70
+| 602/754 questions processed, accuracy 0.538206
+QUESTION:
+how many donuts then 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+20
+| 603/754 questions processed, accuracy 0.537313
+QUESTION:
+how many pillows are on bed 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 604/754 questions processed, accuracy 0.536424
+QUESTION:
+how many sandwiches are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+4
+| 605/754 questions processed, accuracy 0.535537
+QUESTION:
+how many giraffes present 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 606/754 questions processed, accuracy 0.536304
+QUESTION:
+how many remote controls are there 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 607/754 questions processed, accuracy 0.535420
+QUESTION:
+how many zebras 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 608/754 questions processed, accuracy 0.536184
+QUESTION:
+how many motorcycles are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+4
+| 609/754 questions processed, accuracy 0.535304
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+9
+GT ANS:
+7
+| 610/754 questions processed, accuracy 0.534426
+QUESTION:
+how many cups 
+PROGRAM: 
+count
+filter_type[bowl]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 611/754 questions processed, accuracy 0.535188
+QUESTION:
+how many traffic lights are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+2
+| 612/754 questions processed, accuracy 0.534314
+QUESTION:
+how many sheep 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+8
+GT ANS:
+7
+| 613/754 questions processed, accuracy 0.533442
+QUESTION:
+how many cars is the locomotive pulling 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 614/754 questions processed, accuracy 0.532573
+QUESTION:
+how many pizzas 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+4
+| 615/754 questions processed, accuracy 0.531707
+QUESTION:
+how many people are on the boat 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 616/754 questions processed, accuracy 0.530844
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+1
+| 617/754 questions processed, accuracy 0.529984
+QUESTION:
+how many cows 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+5
+| 618/754 questions processed, accuracy 0.529126
+QUESTION:
+how many elephants 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 619/754 questions processed, accuracy 0.529887
+QUESTION:
+how many chairs are in the room 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 620/754 questions processed, accuracy 0.529032
+QUESTION:
+how many skateboards are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+3
+| 621/754 questions processed, accuracy 0.528180
+QUESTION:
+how many sailboats are there 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 622/754 questions processed, accuracy 0.527331
+QUESTION:
+how many sheep do you suppose 
+PROGRAM: 
+count
+filter_type[sheep]
+scene
+scene
+PROGRAM ANSWER:
+14
+GT ANS:
+12
+| 623/754 questions processed, accuracy 0.526485
+QUESTION:
+about how many sheep 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+3
+| 624/754 questions processed, accuracy 0.525641
+QUESTION:
+how many wheels can you see on the truck 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 625/754 questions processed, accuracy 0.524800
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 626/754 questions processed, accuracy 0.525559
+QUESTION:
+how many elephants 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 627/754 questions processed, accuracy 0.526316
+QUESTION:
+how many other elephants 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+1
+| 628/754 questions processed, accuracy 0.525478
+QUESTION:
+how many cattle 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+10
+GT ANS:
+10
+| 629/754 questions processed, accuracy 0.526232
+QUESTION:
+about how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+8
+GT ANS:
+7
+| 630/754 questions processed, accuracy 0.525397
+QUESTION:
+furniture* sorry and how many pieces just a couch 
+PROGRAM: 
+count
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+0
+| 631/754 questions processed, accuracy 0.524564
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+5
+| 632/754 questions processed, accuracy 0.525316
+QUESTION:
+how many bears are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 633/754 questions processed, accuracy 0.526066
+QUESTION:
+how many umbrellas approximately 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+39
+GT ANS:
+3
+| 634/754 questions processed, accuracy 0.525237
+QUESTION:
+how many giraffes can you see 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 635/754 questions processed, accuracy 0.525984
+QUESTION:
+how many oranges 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 636/754 questions processed, accuracy 0.526730
+QUESTION:
+how many giraffes total 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 637/754 questions processed, accuracy 0.527473
+QUESTION:
+how many adult giraffes 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 638/754 questions processed, accuracy 0.528213
+QUESTION:
+how many zebras are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+2
+| 639/754 questions processed, accuracy 0.527387
+QUESTION:
+how many elephants 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 640/754 questions processed, accuracy 0.528125
+QUESTION:
+how many sheep are in the photo 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 641/754 questions processed, accuracy 0.528861
+QUESTION:
+how many people are on the boat 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 642/754 questions processed, accuracy 0.528037
+QUESTION:
+how many trains are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 643/754 questions processed, accuracy 0.528771
+QUESTION:
+about how many cars are there on each train 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+8
+| 644/754 questions processed, accuracy 0.527950
+QUESTION:
+how many kites 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 645/754 questions processed, accuracy 0.527132
+QUESTION:
+how many people are on the bus 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 646/754 questions processed, accuracy 0.526316
+QUESTION:
+how many other cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 647/754 questions processed, accuracy 0.527048
+QUESTION:
+how many trains 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+1
+| 648/754 questions processed, accuracy 0.526235
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 649/754 questions processed, accuracy 0.526965
+QUESTION:
+about how many people can sit on the bench 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 650/754 questions processed, accuracy 0.526154
+QUESTION:
+how many cattle 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+23
+GT ANS:
+13
+| 651/754 questions processed, accuracy 0.525346
+QUESTION:
+how many kites showing 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+20
+| 652/754 questions processed, accuracy 0.524540
+QUESTION:
+how many apples 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+5
+| 653/754 questions processed, accuracy 0.523737
+QUESTION:
+how many oranges 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 654/754 questions processed, accuracy 0.522936
+QUESTION:
+how many benches 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 655/754 questions processed, accuracy 0.522137
+QUESTION:
+ok , how many cars can u see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+4
+| 656/754 questions processed, accuracy 0.521341
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+7
+| 657/754 questions processed, accuracy 0.520548
+QUESTION:
+about how many of those people are flying kites 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+8
+| 658/754 questions processed, accuracy 0.519757
+QUESTION:
+how many teddy bears 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 659/754 questions processed, accuracy 0.520486
+QUESTION:
+how many sinks are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+1
+| 660/754 questions processed, accuracy 0.519697
+QUESTION:
+how many birds are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+4
+| 661/754 questions processed, accuracy 0.518911
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+3
+| 662/754 questions processed, accuracy 0.518127
+QUESTION:
+how many giraffe 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 663/754 questions processed, accuracy 0.518854
+QUESTION:
+how many cats 
+PROGRAM: 
+count
+filter_type[cat]
+filter_type[cat]
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 664/754 questions processed, accuracy 0.519578
+QUESTION:
+how many cows 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+13
+GT ANS:
+10
+| 665/754 questions processed, accuracy 0.518797
+QUESTION:
+how many keyboards can you see 
+PROGRAM: 
+count
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 666/754 questions processed, accuracy 0.518018
+QUESTION:
+how many sheep can you count 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+10
+| 667/754 questions processed, accuracy 0.517241
+QUESTION:
+how many banana slices 
+PROGRAM: 
+count
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+12
+| 668/754 questions processed, accuracy 0.516467
+QUESTION:
+how many different colors is the kite 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+6
+| 669/754 questions processed, accuracy 0.515695
+QUESTION:
+how many books 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 670/754 questions processed, accuracy 0.516418
+QUESTION:
+how many people are near the train 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+30
+| 671/754 questions processed, accuracy 0.515648
+QUESTION:
+how many people are skiing or snowboarding in the photo 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 672/754 questions processed, accuracy 0.514881
+QUESTION:
+how many books 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 673/754 questions processed, accuracy 0.514116
+QUESTION:
+how many scissors are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+18
+GT ANS:
+1
+| 674/754 questions processed, accuracy 0.513353
+QUESTION:
+how many cups are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+24
+| 675/754 questions processed, accuracy 0.512593
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 676/754 questions processed, accuracy 0.513314
+QUESTION:
+how many cars does the train have 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 677/754 questions processed, accuracy 0.512555
+QUESTION:
+how many candles on the cake 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 678/754 questions processed, accuracy 0.511799
+QUESTION:
+how many hot dogs are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+16
+GT ANS:
+4
+| 679/754 questions processed, accuracy 0.511046
+QUESTION:
+how many boats are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 680/754 questions processed, accuracy 0.511765
+QUESTION:
+how many horses 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+4
+| 681/754 questions processed, accuracy 0.511013
+QUESTION:
+how many benches are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+18
+GT ANS:
+1
+| 682/754 questions processed, accuracy 0.510264
+QUESTION:
+how many birds 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+14
+GT ANS:
+0
+| 683/754 questions processed, accuracy 0.509517
+QUESTION:
+how many cakes are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 684/754 questions processed, accuracy 0.510234
+QUESTION:
+how many layers are the cakes 
+PROGRAM: 
+count
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 685/754 questions processed, accuracy 0.509489
+QUESTION:
+how many chairs are on the beach 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 686/754 questions processed, accuracy 0.508746
+QUESTION:
+how many boats would you say there are 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 687/754 questions processed, accuracy 0.509461
+QUESTION:
+how many stuffed dogs are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+2
+| 688/754 questions processed, accuracy 0.508721
+QUESTION:
+how many dogs are in picture 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+3
+| 689/754 questions processed, accuracy 0.507983
+QUESTION:
+how many donuts 
+PROGRAM: 
+count
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+18
+| 690/754 questions processed, accuracy 0.507246
+QUESTION:
+how many cars can you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+12
+| 691/754 questions processed, accuracy 0.506512
+QUESTION:
+how many cars of the train do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+10
+| 692/754 questions processed, accuracy 0.505780
+QUESTION:
+how many sheep are there 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+14
+GT ANS:
+30
+| 693/754 questions processed, accuracy 0.505051
+QUESTION:
+how many dogs can you see 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+20
+GT ANS:
+1
+| 694/754 questions processed, accuracy 0.504323
+QUESTION:
+how many backpackers are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 695/754 questions processed, accuracy 0.505036
+QUESTION:
+how many horses are there 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+scene
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 696/754 questions processed, accuracy 0.505747
+QUESTION:
+how many taps on the sink 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 697/754 questions processed, accuracy 0.505022
+QUESTION:
+how many cars do you see 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+14
+GT ANS:
+0
+| 698/754 questions processed, accuracy 0.504298
+QUESTION:
+how many cars does the train have 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 699/754 questions processed, accuracy 0.503577
+QUESTION:
+how many books do you see 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+20
+| 700/754 questions processed, accuracy 0.502857
+QUESTION:
+how many cows 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+12
+GT ANS:
+2
+| 701/754 questions processed, accuracy 0.502140
+QUESTION:
+how many cattle 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+4
+| 702/754 questions processed, accuracy 0.501425
+QUESTION:
+how many kites are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 703/754 questions processed, accuracy 0.500711
+QUESTION:
+how many cars does it have 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+5
+| 704/754 questions processed, accuracy 0.500000
+QUESTION:
+how many hot dogs are on the grill 
+PROGRAM: 
+count
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 705/754 questions processed, accuracy 0.499291
+QUESTION:
+how many buses 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 706/754 questions processed, accuracy 0.498584
+QUESTION:
+how many flowers are in the vase 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+19
+| 707/754 questions processed, accuracy 0.497878
+QUESTION:
+how many layers is the cake 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+0
+| 708/754 questions processed, accuracy 0.497175
+QUESTION:
+how many kites 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 709/754 questions processed, accuracy 0.496474
+QUESTION:
+how many motorcycles are showing 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 710/754 questions processed, accuracy 0.497183
+QUESTION:
+how many pizzas are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+30
+GT ANS:
+1
+| 711/754 questions processed, accuracy 0.496484
+QUESTION:
+how many bananas are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 712/754 questions processed, accuracy 0.497191
+QUESTION:
+how many cups 
+PROGRAM: 
+count
+filter_type[bowl]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 713/754 questions processed, accuracy 0.496494
+QUESTION:
+how many oranges 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 714/754 questions processed, accuracy 0.497199
+QUESTION:
+how many sheep do you see 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+13
+GT ANS:
+20
+| 715/754 questions processed, accuracy 0.496503
+QUESTION:
+how many horses are white 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+filter_type[horse]
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+2
+| 716/754 questions processed, accuracy 0.495810
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+6
+GT ANS:
+4
+| 717/754 questions processed, accuracy 0.495119
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 718/754 questions processed, accuracy 0.495822
+QUESTION:
+how many motorcycles are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 719/754 questions processed, accuracy 0.496523
+QUESTION:
+how many pieces of pizza is there 
+PROGRAM: 
+exist
+filter_type[couch]
+scene
+PROGRAM ANSWER:
+no
+GT ANS:
+0
+| 720/754 questions processed, accuracy 0.495833
+QUESTION:
+how many motorcycles do you see 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 721/754 questions processed, accuracy 0.496533
+QUESTION:
+how many bananas are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 722/754 questions processed, accuracy 0.495845
+QUESTION:
+can you estimate how many umbrellas 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+3
+| 723/754 questions processed, accuracy 0.495159
+QUESTION:
+how many boats are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 724/754 questions processed, accuracy 0.494475
+QUESTION:
+how many birds 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+0
+| 725/754 questions processed, accuracy 0.493793
+QUESTION:
+how many motorcycles are in the picture 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+3
+| 726/754 questions processed, accuracy 0.493113
+QUESTION:
+how many elephants 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+13
+GT ANS:
+18
+| 727/754 questions processed, accuracy 0.492435
+QUESTION:
+how many train cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 728/754 questions processed, accuracy 0.491758
+QUESTION:
+how many men are walking in front of the bus 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+4
+| 729/754 questions processed, accuracy 0.491084
+QUESTION:
+how many cars are there 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+5
+GT ANS:
+0
+| 730/754 questions processed, accuracy 0.490411
+QUESTION:
+how many boats 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 731/754 questions processed, accuracy 0.489740
+QUESTION:
+how many cars are there 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+3
+GT ANS:
+3
+| 732/754 questions processed, accuracy 0.490437
+QUESTION:
+how many giraffes do you see 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+8
+GT ANS:
+7
+| 733/754 questions processed, accuracy 0.489768
+QUESTION:
+how many motorcycles 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+27
+| 734/754 questions processed, accuracy 0.489101
+QUESTION:
+how many people are on the truck 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[donut]
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+2
+| 735/754 questions processed, accuracy 0.488435
+QUESTION:
+about how many sheep 
+PROGRAM: 
+count
+filter_type[sheep]
+filter_type[sheep]
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+5
+| 736/754 questions processed, accuracy 0.487772
+QUESTION:
+how many elephants 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 737/754 questions processed, accuracy 0.488467
+QUESTION:
+how many heads of broccoli are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 738/754 questions processed, accuracy 0.489160
+QUESTION:
+how many horses do you see 
+PROGRAM: 
+count
+filter_type[horse]
+filter_type[horse]
+scene
+scene
+PROGRAM ANSWER:
+11
+GT ANS:
+10
+| 739/754 questions processed, accuracy 0.488498
+QUESTION:
+how many motorcycles 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+10
+| 740/754 questions processed, accuracy 0.487838
+QUESTION:
+if you needed to guess how many boats are there 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 741/754 questions processed, accuracy 0.487179
+QUESTION:
+how many elephants are there 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+9
+GT ANS:
+9
+| 742/754 questions processed, accuracy 0.487871
+QUESTION:
+how many giraffes are there 
+PROGRAM: 
+count
+filter_type[giraffe]
+filter_type[giraffe]
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+7
+GT ANS:
+6
+| 743/754 questions processed, accuracy 0.487214
+QUESTION:
+how many zebras 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+1
+GT ANS:
+1
+| 744/754 questions processed, accuracy 0.487903
+QUESTION:
+how many chairs are there 
+PROGRAM: 
+count
+filter_type[giraffe]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 745/754 questions processed, accuracy 0.487248
+QUESTION:
+how many elephants 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+PROGRAM ANSWER:
+4
+GT ANS:
+4
+| 746/754 questions processed, accuracy 0.487936
+QUESTION:
+how many cows are there 
+PROGRAM: 
+count
+scene
+scene
+PROGRAM ANSWER:
+10
+GT ANS:
+8
+| 747/754 questions processed, accuracy 0.487282
+QUESTION:
+how many kites are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+20
+| 748/754 questions processed, accuracy 0.486631
+QUESTION:
+how many cars 
+PROGRAM: 
+count
+filter_type[car]
+filter_type[car]
+filter_type[car]
+scene
+scene
+PROGRAM ANSWER:
+2
+GT ANS:
+2
+| 749/754 questions processed, accuracy 0.487316
+QUESTION:
+how many cakes are there 
+PROGRAM: 
+count
+filter_type[motorcycle]
+filter_type[motorcycle]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+1
+| 750/754 questions processed, accuracy 0.486667
+QUESTION:
+how many buses are there 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 751/754 questions processed, accuracy 0.486019
+QUESTION:
+how many bananas 
+PROGRAM: 
+count
+filter_type[elephant]
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+0
+| 752/754 questions processed, accuracy 0.486702
+QUESTION:
+how many shelves are each bookcase 
+PROGRAM: 
+count
+filter_type[donut]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+3
+| 753/754 questions processed, accuracy 0.486056
+QUESTION:
+how many would you say kite there are 
+PROGRAM: 
+count
+filter_type[elephant]
+scene
+scene
+PROGRAM ANSWER:
+0
+GT ANS:
+30
+| 754/754 questions processed, accuracy 0.485411
+{'count_acc': 0.28967254408060455, 'exist_acc': 0.7030812324929971, 'program_acc': 0.0, 'overall_acc': 0.4854111405835544}
+115
+397
+251
+357
+366
+754
+| result saved to ../data/reason/results/result_vidial.json

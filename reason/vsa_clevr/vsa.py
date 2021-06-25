@@ -97,7 +97,7 @@ def bind(hd_vec_1, hd_vec_2):
         try:
             vector = hd_vec_1 * hd_vec_2
         except:
-            print(hd_vec_1.shape)
+            print(hd_vec_1)
     else:
         print(vsa_type)
         

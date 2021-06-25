@@ -9,7 +9,7 @@ import h5py
 import numpy as np
 
 import sys 
-sys.path.append('/home/docker_workspace/clevr_models/ns-vqa/reason')
+sys.path.append('/home/mshaban/docker_workspace/visdial-ns-vqa/ns-vqa/reason')
 
 import utils.programs as program_utils
 import utils.preprocess as preprocess_utils

@@ -20,12 +20,24 @@ class Seq2seq(nn.Module):
     def sample_output(self, x, input_lengths=None):
         encoder_outputs, encoder_hidden = self.encoder(x, input_lengths)
         output_symbols, _ = self.decoder.forward_sample(encoder_outputs, encoder_hidden)
-        return torch.stack(output_symbols).transpose(0,1)
+
+        symbols = torch.stack(output_symbols)
+
+        if len(list(symbols.shape)) == 2:
+            return symbols.transpose(0,1)
+        else:
+            return symbols.unsqueeze(-1).transpose(0,1)
 
     def reinforce_forward(self, x, input_lengths=None):
         encoder_outputs, encoder_hidden = self.encoder(x, input_lengths)
         self.output_symbols, self.output_logprobs = self.decoder.forward_sample(encoder_outputs, encoder_hidden, reinforce_sample=True)
-        return torch.stack(self.output_symbols).transpose(0,1)
+        
+        symbols = torch.stack(self.output_symbols)
+
+        if len(list(symbols.shape)) == 2:
+            return symbols.transpose(0,1)
+        else:
+            return symbols.unsqueeze(-1).transpose(0,1)
 
     def reinforce_backward(self, reward, entropy_factor=0.0):
         assert self.output_logprobs is not None and self.output_symbols is not None, 'must call reinforce_forward first'

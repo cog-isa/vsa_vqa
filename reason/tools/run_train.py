@@ -1,13 +1,12 @@
 import sys
 
-sys.path.append('/home/mshaban/ns-vqa/reason')
+sys.path.append('/home/mshaban/docker_workspace/visdial-ns-vqa/ns-vqa/reason')
 
 from options.train_options import TrainOptions
 from datasets import get_dataloader
 from executors import get_executor
 from models.parser import Seq2seqParser
 from trainer import Trainer
-
 
 opt = TrainOptions().parse()
 train_loader = get_dataloader(opt, 'train')
@@ -16,4 +15,5 @@ model = Seq2seqParser(opt)
 executor = get_executor(opt)
 trainer = Trainer(opt, train_loader, val_loader, model, executor)
 
-trainer.train()
+if __name__ == '__main__':
+    trainer.train()

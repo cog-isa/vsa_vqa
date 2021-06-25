@@ -38,7 +38,7 @@ class Decoder(BaseRNN):
         if use_attention:
             self.attention = Attention(self.hidden_size)
 
-    def forward_step(self, input_var, hidden, encoder_outputs):
+    def forward_step(self, input_var, hidden, encoder_outputs, raw_outputs=False):
         batch_size = input_var.size(0)
         output_size = input_var.size(1)
         embedded = self.embedding(input_var)
@@ -49,8 +49,15 @@ class Decoder(BaseRNN):
         if self.use_attention:
             output, attn = self.attention(output, encoder_outputs)
 
+        if raw_outputs:
+            outputs_raw = output.contiguous().view(-1, self.hidden_size)
+
         output = self.out_linear(output.contiguous().view(-1, self.hidden_size))
         predicted_softmax = F.log_softmax(output.view(batch_size, output_size, -1), 2)
+        
+        if raw_outputs:
+            return predicted_softmax, hidden, attn, outputs_raw
+
         return predicted_softmax, hidden, attn
 
     def forward(self, y, encoder_outputs, encoder_hidden):
@@ -58,15 +65,21 @@ class Decoder(BaseRNN):
         decoder_outputs, decoder_hidden, attn = self.forward_step(y, decoder_hidden, encoder_outputs)
         return decoder_outputs, decoder_hidden
 
-    def forward_sample(self, encoder_outputs, encoder_hidden, reinforce_sample=False):
+    def forward_sample(self, encoder_outputs, encoder_hidden, reinforce_sample=False, return_decoder_outputs=False):
         if isinstance(encoder_hidden, tuple):
             batch_size = encoder_hidden[0].size(1)
             use_cuda = encoder_hidden[0].is_cuda
         else:
             batch_size = encoder_hidden.size(1)
             use_cuda = encoder_hidden.is_cuda
-        decoder_hidden = self._init_state(encoder_hidden)    
+
+        if return_decoder_outputs:
+            decoder_outputs = []
+            
+        decoder_hidden = self._init_state(encoder_hidden)
+
         decoder_input = Variable(torch.LongTensor(batch_size, 1).fill_(self.start_id))
+
         if use_cuda:
             decoder_input = decoder_input.cuda()
 
@@ -92,8 +105,19 @@ class Decoder(BaseRNN):
             return symbols
 
         for i in range(self.max_length):
-            decoder_output, decoder_hidden, step_attn = self.forward_step(decoder_input, decoder_hidden, encoder_outputs)
+            if return_decoder_outputs:
+                decoder_output, decoder_hidden, step_attn, outputs_raw = self.forward_step(decoder_input, decoder_hidden, encoder_outputs, 
+                                                                                                                        raw_outputs=True)
+            else:
+                decoder_output, decoder_hidden, step_attn = self.forward_step(decoder_input, decoder_hidden, encoder_outputs)
+
             decoder_input = decode(i, decoder_output)
+
+            if return_decoder_outputs:
+                decoder_outputs.append(outputs_raw)
+
+        if return_decoder_outputs:
+            return output_symbols, output_logprobs, torch.stack(decoder_outputs).permute(1, 0, 2)
 
         return output_symbols, output_logprobs
 
